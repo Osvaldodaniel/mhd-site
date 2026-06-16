@@ -39,19 +39,16 @@ gtag('config', 'G-DHQ2TN798B');
 <div class="container navbar">
 
 <div class="logo">
-
 <img src="images/logo.png" alt="MHD Logo">
-
 </div>
 
-<nav>
+<button class="menu-toggle" id="menuToggle">
+☰
+</button>
+
+<nav id="menu">
 
 <ul>
-    <li>
-<a href="pensamentos.html">
-Pensamentos
-</a>
-</li>
 
 <li><a href="#home">Início</a></li>
 
@@ -61,7 +58,11 @@ Pensamentos
 
 <li><a href="#biblioteca">Biblioteca</a></li>
 
-<li><a href="#podcast">Podcast</a></li>
+<li><a href="pensamentos.html">Pensamentos</a></li>
+
+<li><a href="favoritos.html">Favoritos</a></li>
+
+<li><a href="podcast.html">Podcast</a></li>
 
 <li><a href="#doacoes">Apoiar</a></li>
 
@@ -74,6 +75,28 @@ Pensamentos
 </div>
 
 </header>
+
+
+<section class="frase-dia">
+
+<div class="container">
+
+<h2>💭 Frase do Dia</h2>
+
+<div class="frase-card">
+
+<p id="fraseDiaTexto"></p>
+
+<span>
+— Osvaldo MUTUQUE
+</span>
+
+</div>
+
+</div>
+
+</section>
+
 
 <section id="home" class="hero">
 
@@ -185,6 +208,8 @@ Fé, Verdade, Esperança, Excelência, Serviço e Transformação.
 
 <div class="cards">
 
+<!-- LIVRO 1 -->
+
 <div class="book-card">
 
 <img
@@ -201,20 +226,18 @@ class="book-cover">
 Devocional diário para fortalecer a fé e caminhar com Deus durante todo o ano.
 </p>
 
-<p><strong>Autor:</strong> Osvaldo Mutuque</p>
-
-<p class="amazon-info">
-Disponível na Amazon
-</p>
+<p><strong>Autor:</strong> Osvaldo MUTUQUE</p>
 
 <div class="book-buttons">
 
-<a href="365-manhas.html" class="btn secondary">
+<a href="365-manhas.html"
+class="btn secondary">
+
 Ver Livro
+
 </a>
 
 <a href="#"
-target="_blank"
 class="btn primary">
 
 Amazon
@@ -222,7 +245,12 @@ Amazon
 </a>
 
 </div>
+
 </div>
+
+</div>
+
+<!-- LIVRO 2 -->
 
 <div class="book-card">
 
@@ -233,7 +261,7 @@ class="book-cover">
 <div class="book-content">
 
 <h3 class="book-title">
-O Poder de Guardar o Seu Coração
+O Poder de Guardar o Coração
 </h3>
 
 <p>
@@ -242,14 +270,13 @@ Princípios para proteger o coração, a mente e as emoções.
 
 <p><strong>Autor:</strong> Osvaldo MUTUQUE</p>
 
-<p class="amazon-info">
-Disponível na Amazon
-</p>
-
 <div class="book-buttons">
 
-<a href="poder-coracao.html" class="btn secondary">
+<a href="poder-coracao.html"
+class="btn secondary">
+
 Ver Livro
+
 </a>
 
 <a href="https://www.amazon.fr/dp/B0H23F93C2"
@@ -261,9 +288,12 @@ Amazon
 </a>
 
 </div>
+
 </div>
 
 </div>
+
+<!-- LIVRO 3 -->
 
 <div class="book-card">
 
@@ -283,9 +313,6 @@ Fundamentos para construir uma vida de propósito.
 </p>
 
 <p><strong>Autor:</strong> Osvaldo MUTUQUE</p>
-<p class="amazon-info">
-Disponível na Amazon
-</p>
 
 <div class="book-buttons">
 
@@ -305,9 +332,12 @@ Amazon
 </a>
 
 </div>
+
 </div>
 
 </div>
+
+<!-- LIVRO 4 -->
 
 <div class="book-card">
 
@@ -323,14 +353,10 @@ Volume 2
 </h3>
 
 <p>
-Ferramentas práticas para crescimento e realização.
+As 7 Leis da Plenitude do Sucesso.
 </p>
 
 <p><strong>Autor:</strong> Osvaldo MUTUQUE</p>
-
-<p class="amazon-info">
-Disponível na Amazon
-</p>
 
 <div class="book-buttons">
 
@@ -350,7 +376,6 @@ Amazon
 </a>
 
 </div>
-</div>
 
 </div>
 
@@ -358,57 +383,9 @@ Amazon
 
 </div>
 
-</section>
-
-<section id="autor">
-
-<div class="container">
-
-<div class="author-section">
-
-<div class="author-photo">
-
-<img src="images/autor.jpg" alt="Osvaldo Mutuque">
-
 </div>
 
-<div class="author-content">
 
-<h2>Osvaldo MUTUQUE</h2>
-
-<p class="author-role">
-
-Engenheiro • Autor • Investigador • Fundador do MHD
-
-</p>
-
-<p>
-
-Osvaldo Mutuque é autor de livros dedicados ao crescimento espiritual, desenvolvimento pessoal e transformação de vidas.
-
-Através da escrita, do ensino e dos projetos do MHD – Minha História Será Diferente, procura inspirar pessoas a desenvolver o seu potencial, fortalecer a sua fé e construir uma vida de propósito.
-
-Os seus livros abordam temas como caráter, disciplina, sucesso, liderança, propósito, crescimento espiritual e transformação pessoal, oferecendo princípios práticos para a vida diária.
-
-A sua missão é transmitir conhecimento, esperança e inspiração a pessoas de diferentes culturas, idiomas e nações.
-
-
-
-</p>
-
-<a href="sobre-autor.html" class="btn primary">
-
-Saber Mais
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
 
 <section id="internacional">
 
@@ -574,32 +551,58 @@ alt="Podcast MHD">
 
 <h3>Em Breve</h3>
 
-<p>
 
-O Podcast MHD será um espaço dedicado a reflexões, entrevistas e conversas transformadoras destinadas a inspirar pessoas a viver com propósito, desenvolver o seu potencial e fortalecer a sua caminhada espiritual.
+<div class="podcast-preview">
 
-</p>
+<div class="podcast-card">
 
-<ul>
+<img
+src="images/videos/poder-coracao.jpg"
+alt="O Poder de Guardar o Coração">
 
-<li>✓ Fé e Crescimento Espiritual</li>
+<h4>
+O Poder de Guardar o Coração
+</h4>
 
-<li>✓ Desenvolvimento Pessoal</li>
+</div>
 
-<li>✓ Liderança</li>
+<div class="podcast-card">
 
-<li>✓ Propósito</li>
+<img
+src="images/videos/mapa-sucesso.jpg"
+alt="O Mapa de uma Vida de Sucesso">
 
-<li>✓ Testemunhos de Transformação</li>
+<h4>
+O Mapa de uma Vida de Sucesso
+</h4>
 
-<li>✓ Conversas Inspiradoras</li>
+</div>
 
-</ul>
+<div class="podcast-card">
+
+<img
+src="images/videos/proposito.jpg"
+alt="Propósito">
+
+<h4>
+Descobrindo o Propósito
+</h4>
+
+</div>
+
+</div>
 
 <br>
 
-<a href="#"
+<a href="podcast.html"
 class="btn primary">
+
+Ver Mais Podcasts
+
+</a>
+
+<a href="#"
+class="btn secondary">
 
 Canal YouTube
 
@@ -608,9 +611,10 @@ Canal YouTube
 <a href="#"
 class="btn secondary">
 
-Spotify (Em Breve)
+Spotify
 
 </a>
+
 
 </div>
 
@@ -708,8 +712,7 @@ style="height:60px;margin-bottom:15px;">
 
 <p>
 
-+258 84 610 8690
-
++258 brevemente
 </p>
 
 </div>
@@ -724,7 +727,7 @@ style="height:60px;margin-bottom:15px;">
 
 <p>
 
-+258 87 610 8691
++258 brevemente
 
 </p>
 
@@ -905,6 +908,58 @@ Subscrever
 
 </section>
 
+</section>
+
+<section id="autor">
+
+<div class="container">
+
+<div class="author-section">
+
+<div class="author-photo">
+
+<img src="images/autor.jpg" alt="Osvaldo Mutuque">
+
+</div>
+
+<div class="author-content">
+
+<h2>Osvaldo MUTUQUE</h2>
+
+<p class="author-role">
+
+Engenheiro • Autor • Investigador • Fundador do MHD
+
+</p>
+
+<p>
+
+Osvaldo Mutuque é autor de livros dedicados ao crescimento espiritual, desenvolvimento pessoal e transformação de vidas.
+
+Através da escrita, do ensino e dos projetos do MHD – Minha História Será Diferente, procura inspirar pessoas a desenvolver o seu potencial, fortalecer a sua fé e construir uma vida de propósito.
+
+Os seus livros abordam temas como caráter, disciplina, sucesso, liderança, propósito, crescimento espiritual e transformação pessoal, oferecendo princípios práticos para a vida diária.
+
+A sua missão é transmitir conhecimento, esperança e inspiração a pessoas de diferentes culturas, idiomas e nações.
+
+
+
+</p>
+
+<a href="sobre-autor.html" class="btn primary">
+
+Saber Mais
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
 <footer>
 
 <div class="container footer-grid">
@@ -993,6 +1048,24 @@ Plano Bíblico
 
 </footer>
 
+<script>
+
+const menuToggle =
+document.querySelector(".menu-toggle");
+
+const menu =
+document.querySelector("#menu");
+
+menuToggle.addEventListener("click", () => {
+
+menu.classList.toggle("active");
+
+});
+
+</script>
+```
+
+
 <script src="script.js"></script>
 
 <a
@@ -1003,6 +1076,90 @@ target="_blank">
 💬
 
 </a>
+
+<script src="pensamentos.js"></script>
+
+<script>
+
+const fraseDia =
+document.getElementById("fraseDiaTexto");
+
+const hoje = new Date();
+
+const numeroDia = Math.floor(
+hoje.getTime() / 86400000
+);
+
+const indice =
+numeroDia % pensamentos.length;
+
+fraseDia.innerText =
+pensamentos[indice].texto;
+
+</script>
+
+<script>
+
+const series = [
+
+{
+titulo:"📖 O Poder de Guardar o Coração",
+descricao:"Transformação interior, emoções e proteção espiritual."
+},
+
+{
+titulo:"📘 O Mapa de uma Vida de Sucesso",
+descricao:"As etapas que moldam o destino humano."
+},
+
+{
+titulo:"🎯 Descobrindo o Propósito",
+descricao:"Como encontrar a direção de Deus para a tua vida."
+},
+
+{
+titulo:"👑 Liderança com Propósito",
+descricao:"Princípios de liderança para gerar impacto."
+},
+
+{
+titulo:"🙏 Fé e Crescimento Espiritual",
+descricao:"Fortalecendo a caminhada com Deus."
+},
+
+{
+titulo:"💡 Testemunhos de Transformação",
+descricao:"Histórias reais de mudança de vida."
+}
+
+];
+
+const embaralhadas =
+[...series].sort(() => 0.5 - Math.random());
+
+const destaque =
+embaralhadas.slice(0,3);
+
+const container =
+document.getElementById("seriesContainer");
+
+destaque.forEach(serie => {
+
+container.innerHTML += `
+
+<div class="serie-card">
+
+<h3>${serie.titulo}</h3>
+
+<p>${serie.descricao}</p>
+
+</div>
+
+`;
+
+});
+
+</script>
 
 </body>
 </html>

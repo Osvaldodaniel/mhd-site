@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+O Mapa de uma Vida de Sucesso – Volume 2
+</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+html,
+body{
+margin:0;
+padding:0;
+height:100%;
+overflow:hidden;
+background:#f5f5f5;
+}
+
+/* TOPO */
+
+.reader-header{
+
+height:70px;
+
+background:#5a189a;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:0 25px;
+
+color:white;
+
+font-family:Arial, sans-serif;
+
+box-sizing:border-box;
+
+}
+
+.reader-header a{
+
+color:white;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
+.reader-header a:hover{
+
+opacity:.8;
+
+}
+
+/* AVISO */
+
+.copyright-notice{
+
+background:#fff3cd;
+
+padding:12px;
+
+text-align:center;
+
+font-size:14px;
+
+border-bottom:1px solid #ddd;
+
+}
+
+/* PDF */
+
+.pdf-container{
+
+height:calc(100vh - 120px);
+
+}
+
+.pdf-container iframe{
+
+width:100%;
+
+height:100%;
+
+border:none;
+
+}
+
+/* MARCA DE ÁGUA */
+
+.watermark{
+
+position:fixed;
+
+bottom:20px;
+
+right:20px;
+
+font-size:28px;
+
+font-weight:bold;
+
+opacity:.12;
+
+pointer-events:none;
+
+z-index:9999;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="reader-header">
+
+<a href="mapa-sucesso-vol2.html">
+← Voltar ao Livro
+</a>
+
+<div>
+O Mapa de uma Vida de Sucesso – Volume 2
+</div>
+
+<a href="index.html">
+Início
+</a>
+
+</div>
+
+<div class="copyright-notice">
+
+Esta obra está protegida por direitos de autor.
+A leitura online é gratuita.
+A reprodução ou distribuição sem autorização é proibida.
+
+</div>
+
+<div class="pdf-container">
+
+<iframe
+src="pdfs/mapa-sucesso-vol2.pdf#toolbar=0&navpanes=0&scrollbar=0">
+</iframe>
+
+</div>
+
+<div class="watermark">
+
+© Osvaldo MUTUQUE
+
+</div>
+
+<script>
+
+/* BLOQUEAR CLIQUE DIREITO */
+
+document.addEventListener(
+"contextmenu",
+function(e){
+e.preventDefault();
+}
+);
+
+/* BLOQUEAR CTRL+S CTRL+P CTRL+U CTRL+C CTRL+A CTRL+X */
+
+document.addEventListener(
+"keydown",
+function(e){
+
+if(
+e.ctrlKey &&
+(
+e.key === "s" ||
+e.key === "p" ||
+e.key === "u" ||
+e.key === "c" ||
+e.key === "a" ||
+e.key === "x"
+)
+){
+
+e.preventDefault();
+
+}
+
+}
+);
+
+/* BLOQUEAR SELEÇÃO DE TEXTO */
+
+document.addEventListener(
+"selectstart",
+function(e){
+e.preventDefault();
+}
+);
+
+/* BLOQUEAR CÓPIA */
+
+document.addEventListener(
+"copy",
+function(e){
+e.preventDefault();
+}
+);
+
+/* BLOQUEAR RECORTE */
+
+document.addEventListener(
+"cut",
+function(e){
+e.preventDefault();
+}
+);
+
+/* BLOQUEAR ARRASTAR */
+
+document.addEventListener(
+"dragstart",
+function(e){
+e.preventDefault();
+}
+);
+
+</script>
+
+</body>
+
+</html>
