@@ -15,6 +15,21 @@ content="MHD - Minha História Será Diferente. Inspirando pessoas a viver uma t
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DHQ2TN798B"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+
+function gtag(){
+dataLayer.push(arguments);
+}
+
+gtag('js', new Date());
+
+gtag('config', 'G-DHQ2TN798B');
+</script>
+
 </head>
 
 <body>
@@ -32,6 +47,11 @@ content="MHD - Minha História Será Diferente. Inspirando pessoas a viver uma t
 <nav>
 
 <ul>
+    <li>
+<a href="pensamentos.html">
+Pensamentos
+</a>
+</li>
 
 <li><a href="#home">Início</a></li>
 
@@ -462,13 +482,6 @@ Uma mensagem de esperança e propósito para diferentes países.
 Reflexões para fortalecer a sua caminhada com Deus.
 </p>
 
-<a
-<h3>Devocional Gratuito</h3>
-
-<p>
-Reflexões para fortalecer a sua caminhada com Deus.
-</p>
-
 <a href="biblioteca/devocional.html"
 class="btn secondary">
 
@@ -482,6 +495,7 @@ class="btn primary">
 Baixar PDF
 
 </a>
+
 </div>
 
 <div class="card">
@@ -686,60 +700,91 @@ Se desejar apoiar esta missão, poderá contribuir através dos seguintes meios:
 
 <div class="card">
 
-<h3>📱 M-Pesa</h3>
+<img src="images/payments/mpesa.png"
+alt="M-Pesa"
+style="height:60px;margin-bottom:15px;">
+
+<h3>M-Pesa</h3>
 
 <p>
-Número:
+
++258 84 610 8690
+
+</p>
+
+</div>
+
+<div class="card">
+
+<img src="images/payments/emola.png"
+alt="e-Mola"
+style="height:60px;margin-bottom:15px;">
+
+<h3>e-Mola</h3>
+
+<p>
+
++258 87 610 8691
+
+</p>
+
+</div>
+
+<div class="card">
+
+<img src="images/payments/bank.png"
+alt="Transferência Bancária"
+style="height:60px;margin-bottom:15px;">
+
+<h3>Transferência Internacional</h3>
+
+<p>
+
+IBAN
+
 <br>
-+258 XX XXX XXXX
+
+FR76 2823 3000 0178 6923 4901 421
+
 </p>
 
 </div>
 
 <div class="card">
 
-<h3>📱 e-Mola</h3>
+<img src="images/payments/bci.png"
+alt="BCI"
+style="height:60px;margin-bottom:15px;">
+
+<h3>Conta BCI</h3>
 
 <p>
-Número:
+
+NIB
+
 <br>
-+258 XX XXX XXXX
+
+000800001011470810113
+
 </p>
 
 </div>
 
 <div class="card">
 
-<h3>🇧🇷 PIX</h3>
+<img src="images/payments/paypal.png"
+alt="PayPal"
+style="height:60px;margin-bottom:15px;">
 
-<p>
-chavepix@email.com
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>🏦 Transferência Bancária</h3>
-
-<p>
-IBAN:
-<br>
-PT50 XXXX XXXX XXXX XXXX XXXX X
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>🌍 PayPal</h3>
+<h3>PayPal</h3>
 
 <p>
 
-<a href="https://paypal.me/seulink"
-target="_blank">
+<a href="https://paypal.me/OMUTUQUE"
+target="_blank"
+class="btn primary">
 
-Contribuir via PayPal
+Contribuir
 
 </a>
 
@@ -752,6 +797,7 @@ Contribuir via PayPal
 </div>
 
 </section>
+
 <section id="projetos">
 
 <div class="container">
@@ -796,24 +842,32 @@ Conteúdo em diferentes idiomas para alcançar diferentes nações.
 
 </section>
 
-<section id="contacto">
+<form
+name="contacto"
+method="POST"
+data-netlify="true">
 
-<div class="container">
-
-<h2>Contacto</h2>
-
-<form>
+<input
+type="hidden"
+name="form-name"
+value="contacto">
 
 <input
 type="text"
-placeholder="Nome">
+name="nome"
+placeholder="Nome"
+required>
 
 <input
 type="email"
-placeholder="Email">
+name="email"
+placeholder="Email"
+required>
 
 <textarea
-placeholder="Mensagem">
+name="mensagem"
+placeholder="Mensagem"
+required>
 </textarea>
 
 <button type="submit">
@@ -823,10 +877,6 @@ Enviar
 </button>
 
 </form>
-
-</div>
-
-</section>
 
 <section class="newsletter">
 
@@ -946,7 +996,7 @@ Plano Bíblico
 <script src="script.js"></script>
 
 <a
-href="https://wa.me/SEUNUMERO"
+href="https://wa.me/258864680061"
 class="whatsapp-float"
 target="_blank">
 

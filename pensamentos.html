@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pensamentos de Osvaldo MUTUQUE</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<h1>Pensamentos de Osvaldo MUTUQUE</h1>
+
+<p>
+Princípios, reflexões e pensamentos sobre fé,
+propósito e transformação.
+</p>
+
+<a href="index.html" class="btn primary">
+Voltar ao Início
+</a>
+
+<a href="favoritos.html" class="btn secondary">
+⭐ Meus Favoritos
+</a>
+
+</div>
+
+</header>
+
+<section class="pensamentos-section">
+
+<div class="container">
+
+<select id="filtroCategoria">
+
+<option value="Todos">
+Todas as Categorias
+</option>
+
+</select>
+
+<div id="listaPensamentos"></div>
+
+</div>
+
+</section>
+
+<script src="pensamentos.js"></script>
+
+<script>
+
+const lista =
+document.getElementById("listaPensamentos");
+
+const filtro =
+document.getElementById("filtroCategoria");
+
+function mostrarPensamentos(categoria="Todos"){
+
+lista.innerHTML = "";
+
+const pensamentosFiltrados =
+categoria === "Todos"
+? pensamentos
+: pensamentos.filter(
+p => p.categoria === categoria
+);
+
+pensamentosFiltrados.forEach(p => {
+
+lista.innerHTML += `
+
+<div class="quote-card">
+
+<h3>${p.categoria}</h3>
+
+<p>"${p.texto}"</p>
+
+<span>
+— Osvaldo MUTUQUE
+</span>
+
+<div class="quote-actions">
+
+<button class="copiar-btn"
+data-texto="${p.texto}">
+📋 Copiar
+</button>
+
+<button class="partilhar-btn"
+data-texto="${p.texto}">
+📤 Partilhar
+</button>
+
+<button class="favorito-btn"
+data-texto="${p.texto}">
+❤️ Favorito
+</button>
+
+</div>
+
+</div>
+`;
+
+});
+
+}
+
+const categorias =
+[...new Set(
+pensamentos.map(p => p.categoria)
+)];
+
+categorias.forEach(cat => {
+
+filtro.innerHTML +=
+`<option value="${cat}">
+${cat}
+</option>`;
+
+});
+
+filtro.addEventListener(
+"change",
+e => mostrarPensamentos(e.target.value)
+);
+function copiarTexto(texto){
+
+navigator.clipboard.writeText(texto);
+
+alert("Frase copiada!");
+
+}
+function partilharTexto(texto){
+
+window.open(
+"https://wa.me/?text=" +
+encodeURIComponent(texto),
+"_blank"
+);
+
+}
+
+function favoritarTexto(texto){
+
+let favoritos =
+JSON.parse(
+localStorage.getItem("favoritos")
+) || [];
+
+if(!favoritos.includes(texto)){
+
+favoritos.push(texto);
+
+localStorage.setItem(
+"favoritos",
+JSON.stringify(favoritos)
+);
+
+alert("Adicionado aos favoritos!");
+
+}else{
+
+alert("Já está nos favoritos!");
+
+}
+
+}
+
+mostrarPensamentos();
+
+</script>
+
+</body>
+</html>

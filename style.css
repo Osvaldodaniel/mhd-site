@@ -652,3 +652,159 @@ text-align:center;
 }
 
 }
+/* ==========================
+   PENSAMENTOS MHD
+========================== */
+
+.pensamentos-section{
+
+padding:80px 0;
+
+background:#fafafa;
+
+}
+
+#filtroCategoria{
+
+width:100%;
+
+max-width:400px;
+
+padding:15px;
+
+margin-bottom:40px;
+
+border-radius:10px;
+
+border:1px solid #ddd;
+
+font-size:16px;
+
+}
+
+#listaPensamentos{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(320px,1fr));
+
+gap:25px;
+
+}
+
+.quote-card{
+
+background:white;
+
+padding:25px;
+
+border-radius:15px;
+
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+
+border-left:5px solid var(--gold);
+
+transition:0.3s;
+
+}
+
+.quote-card:hover{
+
+transform:translateY(-5px);
+
+}
+
+.quote-card h3{
+
+color:var(--purple);
+
+margin-bottom:15px;
+
+font-size:1rem;
+
+}
+
+.quote-card p{
+
+font-size:1.1rem;
+
+font-style:italic;
+
+line-height:1.8;
+
+margin-bottom:20px;
+
+}
+
+.quote-card span{
+
+color:var(--purple);
+
+font-weight:600;
+
+}
+.quote-actions{
+
+margin-top:15px;
+
+}
+
+.quote-actions button{
+
+background:#5a189a;
+
+color:white;
+
+border:none;
+
+padding:10px 15px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+font-weight:bold;
+
+}
+
+.quote-actions button:hover{
+
+opacity:0.9;
+
+}
+.quote-actions{
+
+display:flex;
+
+gap:10px;
+
+margin-top:15px;
+
+flex-wrap:wrap;
+
+}
+
+.quote-actions button{
+
+background:var(--purple);
+
+color:white;
+
+border:none;
+
+padding:10px 15px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+font-size:14px;
+
+}
+
+.quote-actions button:hover{
+
+opacity:0.9;
+
+}

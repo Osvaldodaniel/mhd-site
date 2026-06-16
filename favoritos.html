@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Meus Favoritos | Osvaldo MUTUQUE</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<h1>⭐ Meus Pensamentos Favoritos</h1>
+
+<p>
+Os pensamentos guardados durante a sua leitura.
+</p>
+
+<a href="pensamentos.html" class="btn primary">
+Voltar aos Pensamentos
+</a>
+
+</div>
+
+</header>
+
+<section class="pensamentos-section">
+
+<div class="container">
+
+<div id="listaFavoritos"></div>
+
+</div>
+
+</section>
+
+<script>
+
+const lista =
+document.getElementById("listaFavoritos");
+
+const favoritos =
+JSON.parse(
+localStorage.getItem("favoritos")
+) || [];
+
+if(favoritos.length === 0){
+
+lista.innerHTML = `
+
+<div class="quote-card">
+
+<h3>Nenhum favorito guardado</h3>
+
+<p>
+Ainda não guardou nenhum pensamento.
+</p>
+
+</div>
+
+`;
+
+}else{
+
+favoritos.forEach(frase => {
+
+lista.innerHTML += `
+
+<div class="quote-card">
+
+<p>"${frase}"</p>
+
+<span>
+— Osvaldo MUTUQUE
+</span>
+
+<button
+onclick="removerFavorito('${frase}')">
+
+🗑 Remover
+
+</button>
+
+</div>
+
+`;
+
+});
+
+}
+
+function removerFavorito(frase){
+
+let favoritos =
+JSON.parse(
+localStorage.getItem("favoritos")
+) || [];
+
+favoritos =
+favoritos.filter(
+f => f !== frase
+);
+
+localStorage.setItem(
+"favoritos",
+JSON.stringify(favoritos)
+);
+
+location.reload();
+
+}
+
+</script>
+
+</body>
+</html>
