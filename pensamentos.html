@@ -179,6 +179,36 @@ alert("Já está nos favoritos!");
 
 mostrarPensamentos();
 
+/* EVENTOS DOS BOTÕES */
+
+document.addEventListener("click", function(e){
+
+if(e.target.classList.contains("copiar-btn")){
+
+copiarTexto(
+e.target.dataset.texto
+);
+
+}
+
+if(e.target.classList.contains("partilhar-btn")){
+
+partilharTexto(
+e.target.dataset.texto
+);
+
+}
+
+if(e.target.classList.contains("favorito-btn")){
+
+favoritarTexto(
+e.target.dataset.texto
+);
+
+}
+
+});
+
 </script>
 
 </body>

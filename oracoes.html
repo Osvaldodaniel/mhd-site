@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Orações MHD</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<h1>Orações MHD</h1>
+
+<p>
+Ore connosco e fortaleça a sua caminhada com Deus.
+</p>
+
+<a href="index.html" class="btn primary">
+Voltar ao Início
+</a>
+
+</div>
+
+</header>
+
+<section class="oracoes-section">
+
+<div class="container">
+
+<h2>Orações em Destaque</h2>
+
+<div class="oracoes-grid">
+
+<div class="oracao-card">
+
+<img
+src="images/oracoes/oracao-manha.jpg"
+alt="Oração da Manhã">
+
+<h3>Oração geral</h3>
+
+<p>
+Um momento na presença de Deus.
+</p>
+
+<a href="#" class="btn primary">
+Assistir
+</a>
+
+<br><br>
+
+<button class="btn secondary like-btn">
+👍 Like
+</button>
+
+<button class="btn secondary share-btn">
+📤 Partilhar
+</button>
+
+</div>
+
+<div class="oracao-card">
+
+<div class="oracao-card">
+
+<img
+src="images/oracoes/oracao-familia.jpg"
+alt="Oração pela Família">
+
+<h3>Oração pela Família</h3>
+
+<p>
+Apresente a sua família diante de Deus.
+</p>
+
+<a href="#" class="btn primary">
+Assistir
+</a>
+
+<br><br>
+
+<button class="btn secondary like-btn">
+👍 Like
+</button>
+
+<button class="btn secondary share-btn">
+📤 Partilhar
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<h2>Comentários</h2>
+
+<textarea
+placeholder="Partilhe o que esta oração significou para si">
+</textarea>
+
+<button class="btn primary">
+Enviar Comentário
+</button>
+
+<section class="pedido-oracao">
+
+<div class="container">
+
+<p>
+
+Tem um desafio, uma luta ou um pedido especial?
+
+Partilhe connosco e estaremos a orar por si.
+
+</p>
+
+<form
+name="pedido-oracao"
+method="POST"
+data-netlify="true">
+
+<input
+type="hidden"
+name="form-name"
+value="pedido-oracao">
+
+<input
+type="text"
+name="nome"
+placeholder="Seu Nome"
+required>
+
+<input
+type="email"
+name="email"
+placeholder="Seu Email"
+required>
+
+<textarea
+name="pedido"
+placeholder="Escreva o seu pedido de oração"
+required>
+</textarea>
+
+<button
+type="submit"
+class="btn primary">
+
+Enviar Pedido
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<script>
+
+document.querySelectorAll(".share-btn")
+.forEach(botao => {
+
+botao.addEventListener("click", () => {
+
+if(navigator.share){
+
+navigator.share({
+
+title:"Orações MHD",
+
+text:"Venha orar connosco no MHD",
+
+url:window.location.href
+
+});
+
+}else{
+
+navigator.clipboard.writeText(
+window.location.href
+);
+
+alert("Link copiado!");
+
+}
+
+});
+
+});
+
+document.querySelectorAll(".like-btn")
+.forEach(botao => {
+
+botao.addEventListener("click", () => {
+
+botao.innerHTML = "❤️ Gostei";
+
+});
+
+});
+
+</script>
+
+
+
+</body>
+
+</html>
+

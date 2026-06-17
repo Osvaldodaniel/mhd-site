@@ -63,6 +63,7 @@ gtag('config', 'G-DHQ2TN798B');
 <li><a href="favoritos.html">Favoritos</a></li>
 
 <li><a href="podcast.html">Podcast</a></li>
+<li><a href="oracoes.html">Orações</a></li>
 
 <li><a href="#doacoes">Apoiar</a></li>
 
@@ -206,41 +207,24 @@ Fé, Verdade, Esperança, Excelência, Serviço e Transformação.
 
 <h2>Livraria MHD</h2>
 
-<div class="cards">
-
-<!-- LIVRO 1 -->
-
-<div class="book-card">
-
-<img
-src="images/books/365-manhas.jpg"
-class="book-cover">
-
-<div class="book-content">
-
-<h3 class="book-title">
-365 Manhãs com Deus
-</h3>
-
-<p>
-Devocional diário para fortalecer a fé e caminhar com Deus durante todo o ano.
+<p class="livraria-subtitulo">
+Livros para crescimento espiritual, desenvolvimento pessoal e transformação de vidas.
 </p>
 
-<p><strong>Autor:</strong> Osvaldo MUTUQUE</p>
+<div class="livros-slider">
 
-<div class="book-buttons">
+<div id="livroDestaque"></div>
 
-<a href="365-manhas.html"
-class="btn secondary">
+</div>
 
-Ver Livro
+<br>
 
-</a>
+<div style="text-align:center;">
 
-<a href="#"
+<a href="livraria.html"
 class="btn primary">
 
-Amazon
+Ver Toda a Livraria
 
 </a>
 
@@ -248,136 +232,8 @@ Amazon
 
 </div>
 
-</div>
+</section>
 
-<!-- LIVRO 2 -->
-
-<div class="book-card">
-
-<img
-src="images/books/poder-coracao.jpg"
-class="book-cover">
-
-<div class="book-content">
-
-<h3 class="book-title">
-O Poder de Guardar o Coração
-</h3>
-
-<p>
-Princípios para proteger o coração, a mente e as emoções.
-</p>
-
-<p><strong>Autor:</strong> Osvaldo MUTUQUE</p>
-
-<div class="book-buttons">
-
-<a href="poder-coracao.html"
-class="btn secondary">
-
-Ver Livro
-
-</a>
-
-<a href="https://www.amazon.fr/dp/B0H23F93C2"
-target="_blank"
-class="btn primary">
-
-Amazon
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- LIVRO 3 -->
-
-<div class="book-card">
-
-<img
-src="images/books/mapa-sucesso-1.jpg"
-class="book-cover">
-
-<div class="book-content">
-
-<h3 class="book-title">
-O Mapa de uma Vida de Sucesso
-Volume 1
-</h3>
-
-<p>
-Fundamentos para construir uma vida de propósito.
-</p>
-
-<p><strong>Autor:</strong> Osvaldo MUTUQUE</p>
-
-<div class="book-buttons">
-
-<a href="mapa-sucesso-vol1.html"
-class="btn secondary">
-
-Ver Livro
-
-</a>
-
-<a href="https://www.amazon.fr/dp/B0GYPZNT9V"
-target="_blank"
-class="btn primary">
-
-Amazon
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- LIVRO 4 -->
-
-<div class="book-card">
-
-<img
-src="images/books/mapa-sucesso-2.jpg"
-class="book-cover">
-
-<div class="book-content">
-
-<h3 class="book-title">
-O Mapa de uma Vida de Sucesso
-Volume 2
-</h3>
-
-<p>
-As 7 Leis da Plenitude do Sucesso.
-</p>
-
-<p><strong>Autor:</strong> Osvaldo MUTUQUE</p>
-
-<div class="book-buttons">
-
-<a href="mapa-sucesso-vol2.html"
-class="btn secondary">
-
-Ver Livro
-
-</a>
-
-<a href="https://www.amazon.fr/dp/B0GYQ83TNL"
-target="_blank"
-class="btn primary">
-
-Amazon
-
-</a>
-
-</div>
-
-</div>
 
 </div>
 
@@ -624,13 +480,51 @@ Spotify
 
 </section>
 
+<section id="oracoes-preview">
+
+<div class="container">
+
+<section id="oracoes-preview">
+
+<div class="container">
+
+<h2>Orações MHD</h2>
+
+<p class="section-subtitle">
+
+Momentos de oração para fortalecer a fé,
+encontrar direção e experimentar a presença de Deus.
+
+</p>
+
+<div class="oracoes-banner">
+
+<img
+src="images/oracoes/oracoes-mhd.jpg"
+alt="Orações MHD">
+
+</div>
+
+<br>
+
+<a href="oracoes.html"
+class="btn primary">
+
+Entrar nas Orações
+
+</a>
+
+</div>
+
+</section>
+
+</div>
+
+</section>
 
 </p>
 
 <br>
-
-
-
 </div>
 
 </section>
@@ -1158,6 +1052,87 @@ container.innerHTML += `
 `;
 
 });
+
+</script>
+
+<script>
+
+const livros = [
+
+{
+imagem:"images/books/365-manhas.jpg",
+titulo:"365 Manhãs com Deus",
+descricao:"Devocional diário para fortalecer a fé.",
+link:"365-manhas.html"
+},
+
+{
+imagem:"images/books/poder-coracao.jpg",
+titulo:"O Poder de Guardar o Coração",
+descricao:"Princípios para proteger o coração.",
+link:"poder-coracao.html"
+},
+
+{
+imagem:"images/books/mapa-sucesso-1.jpg",
+titulo:"O Mapa de uma Vida de Sucesso Vol.1",
+descricao:"Fundamentos para uma vida de propósito.",
+link:"mapa-sucesso-vol1.html"
+},
+
+{
+imagem:"images/books/mapa-sucesso-2.jpg",
+titulo:"O Mapa de uma Vida de Sucesso Vol.2",
+descricao:"As 7 Leis da Plenitude do Sucesso.",
+link:"mapa-sucesso-vol2.html"
+}
+
+];
+
+const livroDestaque =
+document.getElementById("livroDestaque");
+
+function mostrarLivroAleatorio(){
+
+const livro =
+livros[Math.floor(
+Math.random() * livros.length
+)];
+
+livroDestaque.innerHTML = `
+
+<div class="livro-slide">
+
+<img
+src="${livro.imagem}"
+alt="${livro.titulo}">
+
+<div class="livro-info">
+
+<h3>${livro.titulo}</h3>
+
+<p>${livro.descricao}</p>
+
+<a href="${livro.link}"
+class="btn primary">
+
+Ver Livro
+
+</a>
+
+</div>
+
+</div>
+`;
+
+}
+
+mostrarLivroAleatorio();
+
+setInterval(
+mostrarLivroAleatorio,
+5000
+);
 
 </script>
 

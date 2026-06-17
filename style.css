@@ -1301,3 +1301,524 @@ color:#5a189a;
 
 }
 
+
+/* ORAÇÕES */
+
+.oracoes-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+margin-top:40px;
+
+}
+
+.oracao-card{
+
+background:white;
+
+border-radius:20px;
+
+overflow:hidden;
+
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+text-align:center;
+
+padding-bottom:20px;
+
+}
+
+.oracao-card img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+}
+
+.oracao-card h3{
+
+margin-top:20px;
+
+color:#5a189a;
+
+}
+
+.oracao-card p{
+
+padding:0 20px;
+
+}
+
+.pedido-oracao{
+
+padding:80px 0;
+
+}
+
+.pedido-oracao form{
+
+max-width:700px;
+
+margin:auto;
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.pedido-oracao input,
+.pedido-oracao textarea{
+
+padding:15px;
+
+border:1px solid #ddd;
+
+border-radius:10px;
+
+font-size:16px;
+
+}
+
+.pedido-oracao textarea{
+
+min-height:180px;
+
+resize:vertical;
+
+}
+
+/* ===== ORAÇÕES HOME ===== */
+
+#oracoes-preview{
+
+padding:80px 20px;
+
+text-align:center;
+
+}
+
+#oracoes-preview h2{
+
+font-size:48px;
+
+color:#5a189a;
+
+margin-bottom:20px;
+
+}
+
+#oracoes-preview .section-subtitle{
+
+max-width:800px;
+
+margin:0 auto 30px auto;
+
+font-size:20px;
+
+line-height:1.7;
+
+}
+
+/* IMAGEM */
+
+.oracoes-banner{
+
+max-width:550px;
+
+margin:30px auto;
+
+border-radius:20px;
+
+overflow:hidden;
+
+box-shadow:0 8px 25px rgba(0,0,0,.10);
+
+transition:.3s;
+
+}
+
+.oracoes-banner:hover{
+
+transform:translateY(-5px);
+
+}
+
+.oracoes-banner img{
+
+width:100%;
+
+height:auto;
+
+display:block;
+
+}
+
+/* BOTÃO */
+
+#oracoes-preview .btn{
+
+margin-top:20px;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+#oracoes-preview{
+
+padding:60px 15px;
+
+}
+
+#oracoes-preview h2{
+
+font-size:34px;
+
+}
+
+#oracoes-preview .section-subtitle{
+
+font-size:18px;
+
+}
+
+.oracoes-banner{
+
+max-width:100%;
+
+}
+
+}
+
+/* ===================================== */
+/* LIVRARIA HOME */
+/* ===================================== */
+
+.livros-slider{
+
+max-width:500px;
+
+margin:50px auto;
+
+}
+
+.livro-slide{
+
+background:#fff;
+
+padding:40px;
+
+border-radius:25px;
+
+box-shadow:0 12px 35px rgba(0,0,0,.08);
+
+text-align:center;
+
+transition:.4s;
+
+}
+
+
+.livro-slide:hover{
+
+transform:translateY(-5px);
+
+}
+
+.livro-slide img{
+
+height:320px;
+
+width:auto;
+
+display:block;
+
+margin:0 auto 25px auto;
+
+}
+
+.livro-info{
+
+text-align:center;
+
+}
+
+.livro-info h3{
+
+font-size:30px;
+
+color:#5a189a;
+
+margin-bottom:15px;
+
+line-height:1.4;
+
+}
+
+.livro-info p{
+
+font-size:17px;
+
+line-height:1.8;
+
+color:#555;
+
+margin-bottom:25px;
+
+}
+
+@media(max-width:768px){
+
+.livro-slide{
+
+padding:25px;
+
+}
+
+.livro-slide img{
+
+height:250px;
+
+}
+
+.livro-info h3{
+
+font-size:24px;
+
+}
+
+}
+.livraria-subtitulo{
+
+text-align:center;
+
+max-width:800px;
+
+margin:0 auto 30px auto;
+
+font-size:18px;
+
+line-height:1.8;
+
+}
+
+
+body{
+margin:0;
+padding:0;
+background:#f5f5f5;
+font-family:Arial, sans-serif;
+}
+
+/* TOPO */
+
+.reader-header{
+
+height:70px;
+
+background:#5a189a;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:0 25px;
+
+color:white;
+
+box-sizing:border-box;
+
+}
+
+.reader-header a{
+
+color:white;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
+.reader-header a:hover{
+
+opacity:.8;
+
+}
+
+/* AVISO */
+
+.copyright-notice{
+
+background:#fff3cd;
+
+padding:12px;
+
+text-align:center;
+
+font-size:14px;
+
+border-bottom:1px solid #ddd;
+
+}
+
+/* VISUALIZADOR DO LIVRO */
+
+.book-viewer{
+
+max-width:1200px;
+
+margin:30px auto;
+
+background:white;
+
+border-radius:15px;
+
+overflow:hidden;
+
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+}
+
+.book-viewer iframe{
+
+width:100%;
+
+height:900px;
+
+border:none;
+
+background:white;
+
+}
+
+/* NAVEGAÇÃO */
+
+.reader-navigation{
+
+max-width:1200px;
+
+margin:20px auto 40px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:0 20px;
+
+}
+
+.reader-navigation button{
+
+background:#5a189a;
+
+color:white;
+
+border:none;
+
+padding:12px 20px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+font-weight:bold;
+
+font-size:15px;
+
+}
+
+.reader-navigation button:hover{
+
+opacity:.9;
+
+}
+
+#contador{
+
+font-weight:bold;
+
+font-size:16px;
+
+color:#333;
+
+}
+
+/* MARCA DE ÁGUA */
+
+.watermark{
+
+position:fixed;
+
+bottom:20px;
+
+right:20px;
+
+font-size:28px;
+
+font-weight:bold;
+
+opacity:.08;
+
+pointer-events:none;
+
+z-index:9999;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.reader-header{
+
+padding:0 15px;
+
+font-size:14px;
+
+}
+
+.book-viewer{
+
+margin:15px;
+
+}
+
+.book-viewer iframe{
+
+height:700px;
+
+}
+
+.reader-navigation{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.reader-navigation button{
+
+width:100%;
+
+}
+
+}
+
