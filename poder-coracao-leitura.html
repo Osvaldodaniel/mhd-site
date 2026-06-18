@@ -15,14 +15,170 @@ O Poder de Guardar o Coração
 
 <style>
 
-html,
 body{
 margin:0;
 padding:0;
-height:100%;
-overflow:hidden;
-background:#f5f5f5;
+background:#f3f3f3;
+font-family:Arial,sans-serif;
 }
+
+.reader-header{
+height:70px;
+background:#5a189a;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 25px;
+color:white;
+font-weight:bold;
+}
+
+.reader-header a{
+color:white;
+text-decoration:none;
+}
+
+.copyright-notice{
+background:#fff3cd;
+padding:12px;
+text-align:center;
+font-size:14px;
+border-bottom:1px solid #ddd;
+}
+
+.book-viewer{
+
+width:92%;
+
+max-width:1200px;
+
+margin:30px auto;
+
+background:white;
+
+border-radius:20px;
+
+overflow:hidden;
+
+box-shadow:0 10px 30px rgba(0,0,0,.10);
+
+padding:20px;
+
+}
+
+.book-viewer iframe{
+
+width:100%;
+
+height:calc(100vh - 220px);
+
+border:none;
+
+background:white;
+
+}
+
+.reader-navigation{
+
+max-width:1200px;
+
+margin:20px auto 40px;
+
+display:grid;
+
+grid-template-columns:1fr auto auto 1fr;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+.reader-navigation button{
+
+min-width:180px;
+
+}
+
+.reader-navigation button:last-child{
+
+justify-self:end;
+
+}
+
+#contador{
+
+font-size:20px;
+
+font-weight:700;
+
+text-align:center;
+
+}
+
+.reader-navigation button{
+background:#5a189a;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.reader-navigation button:hover{
+opacity:.9;
+}
+
+#contador{
+font-weight:bold;
+font-size:16px;
+}
+
+.watermark{
+position:fixed;
+bottom:20px;
+right:20px;
+font-size:28px;
+font-weight:bold;
+opacity:.08;
+pointer-events:none;
+}
+
+@media(max-width:768px){
+
+.reader-header{
+font-size:13px;
+padding:0 10px;
+}
+
+.book-viewer iframe{
+height:75vh;
+}
+
+.reader-navigation{
+flex-direction:column;
+}
+
+.reader-navigation button{
+width:100%;
+}
+
+}
+
+</style>
+
+
+<style>
+
+body{
+margin:0;
+padding:0;
+background:#f3f3f3;
+font-family:Arial,sans-serif;
+}
+
+/* CABEÇALHO */
 
 .reader-header{
 
@@ -32,17 +188,15 @@ background:#5a189a;
 
 display:flex;
 
-align-items:center;
-
 justify-content:space-between;
+
+align-items:center;
 
 padding:0 25px;
 
 color:white;
 
-font-family:Arial, sans-serif;
-
-box-sizing:border-box;
+font-weight:bold;
 
 }
 
@@ -52,8 +206,6 @@ color:white;
 
 text-decoration:none;
 
-font-weight:bold;
-
 }
 
 .reader-header a:hover{
@@ -61,6 +213,8 @@ font-weight:bold;
 opacity:.8;
 
 }
+
+/* AVISO */
 
 .copyright-notice{
 
@@ -76,21 +230,93 @@ border-bottom:1px solid #ddd;
 
 }
 
-.pdf-container{
+/* LIVRO */
 
-height:calc(100vh - 120px);
+.book-viewer{
+
+width:96%;
+
+max-width:1500px;
+
+margin:20px auto;
+
+background:white;
+
+border-radius:15px;
+
+overflow:hidden;
+
+box-shadow:0 8px 30px rgba(0,0,0,.10);
 
 }
 
-.pdf-container iframe{
+.book-viewer iframe{
 
 width:100%;
 
-height:100%;
+height:calc(100vh - 180px);
 
 border:none;
 
+background:white;
+
 }
+
+/* NAVEGAÇÃO */
+
+.reader-navigation{
+
+width:96%;
+
+max-width:1500px;
+
+margin:20px auto 40px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.reader-navigation button{
+
+background:#5a189a;
+
+color:white;
+
+border:none;
+
+padding:12px 25px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+font-weight:bold;
+
+font-size:15px;
+
+}
+
+.reader-navigation button:hover{
+
+opacity:.9;
+
+}
+
+#contador{
+
+font-weight:bold;
+
+font-size:16px;
+
+color:#333;
+
+}
+
+/* MARCA DE ÁGUA */
 
 .watermark{
 
@@ -104,11 +330,45 @@ font-size:28px;
 
 font-weight:bold;
 
-opacity:.12;
+opacity:.08;
 
 pointer-events:none;
 
 z-index:9999;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.reader-header{
+
+font-size:13px;
+
+padding:0 10px;
+
+}
+
+.book-viewer iframe{
+
+height:75vh;
+
+}
+
+.reader-navigation{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.reader-navigation button{
+
+width:100%;
+
+}
 
 }
 
@@ -142,11 +402,32 @@ A reprodução ou distribuição sem autorização é proibida.
 
 </div>
 
-<div class="pdf-container">
+<div class="book-viewer">
 
 <iframe
-src="pdfs/poder-coracao.pdf#toolbar=0&navpanes=0&scrollbar=0">
+src="livros/poder-coracao/titlepage.xhtml"
+id="bookFrame">
 </iframe>
+
+</div>
+
+<div class="reader-navigation">
+
+<button onclick="paginaAnterior()">
+← Página Anterior
+</button>
+
+<span id="contador">
+1 / 35
+</span>
+
+<button onclick="reiniciarLeitura()">
+Recomeçar
+</button>
+
+<button onclick="proximaPagina()">
+Próxima Página →
+</button>
 
 </div>
 
@@ -158,65 +439,150 @@ src="pdfs/poder-coracao.pdf#toolbar=0&navpanes=0&scrollbar=0">
 
 <script>
 
-document.addEventListener(
-"contextmenu",
-function(e){
-e.preventDefault();
-}
-);
+/* PROTEÇÃO */
 
-document.addEventListener(
-"keydown",
-function(e){
+document.addEventListener("contextmenu", function(e){
+e.preventDefault();
+});
+
+document.addEventListener("keydown", function(e){
 
 if(
 e.ctrlKey &&
 (
 e.key === "s" ||
 e.key === "p" ||
-e.key === "u" ||
-e.key === "c" ||
-e.key === "a" ||
-e.key === "x"
+e.key === "u"
 )
 ){
-
-e.preventDefault();
-
-}
-
-}
-);
-
-document.addEventListener(
-"selectstart",
-function(e){
 e.preventDefault();
 }
+
+});
+
+/* LISTA DE PÁGINAS */
+
+const paginas = [
+
+"titlepage.xhtml",
+
+"index_split_000.html",
+"index_split_001.html",
+"index_split_002.html",
+"index_split_003.html",
+"index_split_004.html",
+"index_split_005.html",
+"index_split_006.html",
+"index_split_007.html",
+"index_split_008.html",
+"index_split_009.html",
+"index_split_010.html",
+"index_split_011.html",
+"index_split_012.html",
+"index_split_013.html",
+"index_split_014.html",
+"index_split_015.html",
+"index_split_016.html",
+"index_split_017.html",
+"index_split_018.html",
+"index_split_019.html",
+"index_split_020.html",
+"index_split_021.html",
+"index_split_022.html",
+"index_split_023.html",
+"index_split_024.html",
+"index_split_025.html",
+"index_split_026.html",
+"index_split_027.html",
+"index_split_028.html",
+"index_split_029.html",
+"index_split_030.html",
+"index_split_031.html",
+"index_split_032.html",
+"index_split_033.html",
+"index_split_034.html",
+"index_split_035.html",
+"index_split_036.html",
+"index_split_037.html"
+
+];
+
+/* RECUPERAR ÚLTIMA PÁGINA */
+
+let paginaAtual =
+parseInt(localStorage.getItem("poderCoracaoPagina")) || 0;
+
+/* CARREGAR PÁGINA */
+
+function carregarPagina(){
+
+document.getElementById("bookFrame").src =
+"livros/poder-coracao/" + paginas[paginaAtual];
+
+document.getElementById("contador").innerHTML =
+(paginaAtual + 1) + " / " + paginas.length;
+
+localStorage.setItem(
+"mapaVol1Pagina",
+paginaAtual
 );
 
-document.addEventListener(
-"copy",
-function(e){
-e.preventDefault();
 }
+
+/* PRÓXIMA */
+
+function proximaPagina(){
+
+if(paginaAtual < paginas.length - 1){
+
+paginaAtual++;
+
+carregarPagina();
+
+}
+
+}
+
+/* ANTERIOR */
+
+function paginaAnterior(){
+
+if(paginaAtual > 0){
+
+paginaAtual--;
+
+carregarPagina();
+
+}
+
+}
+
+/* RECOMEÇAR */
+
+function reiniciarLeitura(){
+
+if(confirm(
+"Deseja voltar para o início do livro?"
+)){
+
+paginaAtual = 0;
+
+localStorage.removeItem(
+"poderCoracaoPagina"
 );
 
-document.addEventListener(
-"cut",
-function(e){
-e.preventDefault();
-}
-);
+carregarPagina();
 
-document.addEventListener(
-"dragstart",
-function(e){
-e.preventDefault();
 }
-);
+
+}
+
+/* INICIAR */
+
+carregarPagina();
 
 </script>
+
 
 </body>
 
