@@ -1,0 +1,381 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="fra">
+  <head>
+    <meta name="dtb:uid" content="d50996e6-23e6-43a6-b043-cae5405129aa"/>
+    <meta name="dtb:depth" content="3"/>
+    <meta name="dtb:generator" content="calibre (9.9.0)"/>
+    <meta name="dtb:totalPageCount" content="0"/>
+    <meta name="dtb:maxPageNumber" content="0"/>
+  </head>
+  <docTitle>
+    <text>O MAPA DE UMA VIDA DE SUCESSO</text>
+  </docTitle>
+  <navMap>
+    <navPoint id="num_1" playOrder="1" class="chapter">
+      <navLabel>
+        <text>Dedicatória</text>
+      </navLabel>
+      <content src="index_split_001.html#id_Toc232694859"/>
+    </navPoint>
+    <navPoint id="num_2" playOrder="2" class="chapter">
+      <navLabel>
+        <text>Agradecimentos</text>
+      </navLabel>
+      <content src="index_split_002.html"/>
+    </navPoint>
+    <navPoint id="num_3" playOrder="3" class="chapter">
+      <navLabel>
+        <text>Prefácio Geral</text>
+      </navLabel>
+      <content src="index_split_003.html"/>
+    </navPoint>
+    <navPoint id="num_4" playOrder="4" class="chapter">
+      <navLabel>
+        <text>Sobre o Autor</text>
+      </navLabel>
+      <content src="index_split_004.html"/>
+    </navPoint>
+    <navPoint id="num_5" playOrder="5" class="chapter">
+      <navLabel>
+        <text>O MAPA DE UMA VIDA DE SUCESSO</text>
+      </navLabel>
+      <content src="index_split_005.html"/>
+    </navPoint>
+    <navPoint id="num_6" playOrder="6" class="chapter">
+      <navLabel>
+        <text>Introdução</text>
+      </navLabel>
+      <content src="index_split_005.html#id_Toc232694864"/>
+    </navPoint>
+    <navPoint id="num_7" playOrder="7" class="chapter">
+      <navLabel>
+        <text>Lei 1 — A Lei da Crise</text>
+      </navLabel>
+      <content src="index_split_006.html"/>
+      <navPoint id="num_8" playOrder="8" class="chapter">
+        <navLabel>
+          <text>Introdução</text>
+        </navLabel>
+        <content src="index_split_007.html"/>
+      </navPoint>
+      <navPoint id="num_9" playOrder="9" class="chapter">
+        <navLabel>
+          <text>Como Reconhecer que Estás Nesta Fase</text>
+        </navLabel>
+        <content src="index_split_007.html#id_Toc232694867"/>
+      </navPoint>
+      <navPoint id="num_10" playOrder="10" class="chapter">
+        <navLabel>
+          <text>O Que Muitos Não Compreendem Nesta Etapa</text>
+        </navLabel>
+        <content src="index_split_007.html#id_Toc232694868"/>
+      </navPoint>
+      <navPoint id="num_11" playOrder="11" class="chapter">
+        <navLabel>
+          <text>Os Perigos Desta Fase</text>
+        </navLabel>
+        <content src="index_split_007.html#id_Toc232694869"/>
+      </navPoint>
+      <navPoint id="num_12" playOrder="12" class="chapter">
+        <navLabel>
+          <text>Porque a Crise é uma Lei Fundamental do Sucesso</text>
+        </navLabel>
+        <content src="index_split_007.html#id_Toc232694870"/>
+      </navPoint>
+      <navPoint id="num_13" playOrder="13" class="chapter">
+        <navLabel>
+          <text>Conclusão</text>
+        </navLabel>
+        <content src="index_split_007.html#id_Toc232694871"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_14" playOrder="14" class="chapter">
+      <navLabel>
+        <text>Lei 2 — A Lei da Revelação</text>
+      </navLabel>
+      <content src="index_split_009.html#id_Toc232694872"/>
+      <navPoint id="num_15" playOrder="15" class="chapter">
+        <navLabel>
+          <text>Introdução</text>
+        </navLabel>
+        <content src="index_split_010.html"/>
+      </navPoint>
+      <navPoint id="num_16" playOrder="16" class="chapter">
+        <navLabel>
+          <text>Sinais de Que Estás Nesta Fase</text>
+        </navLabel>
+        <content src="index_split_010.html#id_Toc232694874"/>
+      </navPoint>
+      <navPoint id="num_17" playOrder="17" class="chapter">
+        <navLabel>
+          <text>O Que Muitos Não Compreendem Nesta Etapa</text>
+        </navLabel>
+        <content src="index_split_010.html#id_Toc232694875"/>
+      </navPoint>
+      <navPoint id="num_18" playOrder="18" class="chapter">
+        <navLabel>
+          <text>Os Perigos Desta Fase</text>
+        </navLabel>
+        <content src="index_split_011.html#id_Toc232694876"/>
+      </navPoint>
+      <navPoint id="num_19" playOrder="19" class="chapter">
+        <navLabel>
+          <text>O Que Esta Fase Pode Produzir</text>
+        </navLabel>
+        <content src="index_split_011.html#id_Toc232694877"/>
+      </navPoint>
+      <navPoint id="num_20" playOrder="20" class="chapter">
+        <navLabel>
+          <text>Como Receber a Revelação Correcta</text>
+        </navLabel>
+        <content src="index_split_011.html#id_Toc232694878"/>
+      </navPoint>
+      <navPoint id="num_21" playOrder="21" class="chapter">
+        <navLabel>
+          <text>Como Atravessar Esta Fase Correctamente</text>
+        </navLabel>
+        <content src="index_split_013.html"/>
+      </navPoint>
+      <navPoint id="num_22" playOrder="22" class="chapter">
+        <navLabel>
+          <text>Conclusão</text>
+        </navLabel>
+        <content src="index_split_013.html#id_Toc232694880"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_23" playOrder="23" class="chapter">
+      <navLabel>
+        <text>Lei 3 — A Lei do Preparo Interno</text>
+      </navLabel>
+      <content src="index_split_014.html#id_Toc232694881"/>
+      <navPoint id="num_24" playOrder="24" class="chapter">
+        <navLabel>
+          <text>Introdução</text>
+        </navLabel>
+        <content src="index_split_015.html"/>
+      </navPoint>
+      <navPoint id="num_25" playOrder="25" class="chapter">
+        <navLabel>
+          <text>Porque Esta Lei é Irrevogável</text>
+        </navLabel>
+        <content src="index_split_015.html#id_Toc232694883"/>
+      </navPoint>
+      <navPoint id="num_26" playOrder="26" class="chapter">
+        <navLabel>
+          <text>A Renovação da Mente</text>
+        </navLabel>
+        <content src="index_split_015.html#id_Toc232694884"/>
+      </navPoint>
+      <navPoint id="num_27" playOrder="27" class="chapter">
+        <navLabel>
+          <text>O Carácter Como Estrutura de Sustentação</text>
+        </navLabel>
+        <content src="index_split_015.html#id_Toc232694885"/>
+      </navPoint>
+      <navPoint id="num_28" playOrder="28" class="chapter">
+        <navLabel>
+          <text>O Preparo Emocional</text>
+        </navLabel>
+        <content src="index_split_015.html#id_Toc232694886"/>
+      </navPoint>
+      <navPoint id="num_29" playOrder="29" class="chapter">
+        <navLabel>
+          <text>A Relação Entre Preparo e Prosperidade</text>
+        </navLabel>
+        <content src="index_split_016.html#id_Toc232694887"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_30" playOrder="30" class="chapter">
+      <navLabel>
+        <text>Ligação com a Próxima Fase</text>
+      </navLabel>
+      <content src="index_split_016.html#id_Toc232694888"/>
+      <navPoint id="num_31" playOrder="31" class="chapter">
+        <navLabel>
+          <text>Conclusão</text>
+        </navLabel>
+        <content src="index_split_016.html#id_Toc232694889"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_32" playOrder="32" class="chapter">
+      <navLabel>
+        <text>Lei 4 — A Lei da Restauração</text>
+      </navLabel>
+      <content src="index_split_017.html#id_Toc232694890"/>
+      <navPoint id="num_33" playOrder="33" class="chapter">
+        <navLabel>
+          <text>Introdução</text>
+        </navLabel>
+        <content src="index_split_018.html"/>
+      </navPoint>
+      <navPoint id="num_34" playOrder="34" class="chapter">
+        <navLabel>
+          <text>Sinais de Que Estás Nesta Fase</text>
+        </navLabel>
+        <content src="index_split_018.html#id_Toc232694892"/>
+      </navPoint>
+      <navPoint id="num_35" playOrder="35" class="chapter">
+        <navLabel>
+          <text>O Que Muitos Não Compreendem Nesta Etapa</text>
+        </navLabel>
+        <content src="index_split_018.html#id_Toc232694893"/>
+      </navPoint>
+      <navPoint id="num_36" playOrder="36" class="chapter">
+        <navLabel>
+          <text>Os Perigos Desta Fase</text>
+        </navLabel>
+        <content src="index_split_019.html#id_Toc232694894"/>
+      </navPoint>
+      <navPoint id="num_37" playOrder="37" class="chapter">
+        <navLabel>
+          <text>Conclusão</text>
+        </navLabel>
+        <content src="index_split_019.html#id_Toc232694895"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_38" playOrder="38" class="chapter">
+      <navLabel>
+        <text>Lei 5 — O Sucesso Verdadeiro</text>
+      </navLabel>
+      <content src="index_split_021.html#id_Toc232694896"/>
+      <navPoint id="num_39" playOrder="39" class="chapter">
+        <navLabel>
+          <text>Introdução</text>
+        </navLabel>
+        <content src="index_split_022.html"/>
+      </navPoint>
+      <navPoint id="num_40" playOrder="40" class="chapter">
+        <navLabel>
+          <text>O Que Esta Fase Significa</text>
+        </navLabel>
+        <content src="index_split_022.html#id_Toc232694898"/>
+      </navPoint>
+      <navPoint id="num_41" playOrder="41" class="chapter">
+        <navLabel>
+          <text>Conclusão</text>
+        </navLabel>
+        <content src="index_split_024.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_42" playOrder="42" class="chapter">
+      <navLabel>
+        <text>Lei 6 — A Lei da Aprendizagem Contínua</text>
+      </navLabel>
+      <content src="index_split_025.html#id_Toc232694900"/>
+      <navPoint id="num_43" playOrder="43" class="chapter">
+        <navLabel>
+          <text>Introdução</text>
+        </navLabel>
+        <content src="index_split_026.html"/>
+      </navPoint>
+      <navPoint id="num_44" playOrder="44" class="chapter">
+        <navLabel>
+          <text>Aprender Continuamente: Buscar Conhecimento Científico</text>
+        </navLabel>
+        <content src="index_split_026.html#id_Toc232694902"/>
+      </navPoint>
+      <navPoint id="num_45" playOrder="45" class="chapter">
+        <navLabel>
+          <text>Aprender Continuamente: Buscar Conhecimento da Palavra de Deus</text>
+        </navLabel>
+        <content src="index_split_026.html#id_Toc232694903"/>
+      </navPoint>
+      <navPoint id="num_46" playOrder="46" class="chapter">
+        <navLabel>
+          <text>Submeter-se às Autoridades Espirituais</text>
+        </navLabel>
+        <content src="index_split_026.html#id_Toc232694904"/>
+      </navPoint>
+      <navPoint id="num_47" playOrder="47" class="chapter">
+        <navLabel>
+          <text>Ser Curioso, Mas Sábio</text>
+        </navLabel>
+        <content src="index_split_026.html#id_Toc232694905"/>
+      </navPoint>
+      <navPoint id="num_48" playOrder="48" class="chapter">
+        <navLabel>
+          <text>Desenvolver Capacidade de Adaptar-se Sem Perder Princípios</text>
+        </navLabel>
+        <content src="index_split_026.html#id_Toc232694906"/>
+      </navPoint>
+      <navPoint id="num_49" playOrder="49" class="chapter">
+        <navLabel>
+          <text>Conclusão</text>
+        </navLabel>
+        <content src="index_split_026.html#id_Toc232694907"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_50" playOrder="50" class="chapter">
+      <navLabel>
+        <text>Lei 7 — A Lei da Prosperidade Duradoura</text>
+      </navLabel>
+      <content src="index_split_028.html"/>
+      <navPoint id="num_51" playOrder="51" class="chapter">
+        <navLabel>
+          <text>Introdução</text>
+        </navLabel>
+        <content src="index_split_029.html"/>
+      </navPoint>
+      <navPoint id="num_52" playOrder="52" class="chapter">
+        <navLabel>
+          <text>A Importância de Formar Sucessores</text>
+        </navLabel>
+        <content src="index_split_031.html#id_Toc232694910"/>
+      </navPoint>
+      <navPoint id="num_53" playOrder="53" class="chapter">
+        <navLabel>
+          <text>A Importância de Investir</text>
+        </navLabel>
+        <content src="index_split_032.html#id_Toc232694911"/>
+      </navPoint>
+      <navPoint id="num_54" playOrder="54" class="chapter">
+        <navLabel>
+          <text>A Importância da Evangelização na Vida da Igreja</text>
+        </navLabel>
+        <content src="index_split_033.html"/>
+      </navPoint>
+      <navPoint id="num_55" playOrder="55" class="chapter">
+        <navLabel>
+          <text>A Importância da Introspecção</text>
+        </navLabel>
+        <content src="index_split_033.html#id_Toc232694913"/>
+      </navPoint>
+      <navPoint id="num_56" playOrder="56" class="chapter">
+        <navLabel>
+          <text>A Importância da Auditoria</text>
+        </navLabel>
+        <content src="index_split_033.html#id_Toc232694914"/>
+      </navPoint>
+      <navPoint id="num_57" playOrder="57" class="chapter">
+        <navLabel>
+          <text>A Importância de Criar Conexões</text>
+        </navLabel>
+        <content src="index_split_033.html#id_Toc232694915"/>
+      </navPoint>
+      <navPoint id="num_58" playOrder="58" class="chapter">
+        <navLabel>
+          <text>A Importância de Valorizar a Experiência Adquirida</text>
+        </navLabel>
+        <content src="index_split_033.html#id_Toc232694916"/>
+      </navPoint>
+      <navPoint id="num_59" playOrder="59" class="chapter">
+        <navLabel>
+          <text>O Que Esta Fase Significa para o Legado</text>
+        </navLabel>
+        <content src="index_split_033.html#id_Toc232694917"/>
+      </navPoint>
+      <navPoint id="num_60" playOrder="60" class="chapter">
+        <navLabel>
+          <text>Conclusão</text>
+        </navLabel>
+        <content src="index_split_033.html#id_Toc232694918"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_61" playOrder="61" class="chapter">
+      <navLabel>
+        <text>Conclusão Final</text>
+      </navLabel>
+      <content src="index_split_035.html"/>
+    </navPoint>
+  </navMap>
+</ncx>
