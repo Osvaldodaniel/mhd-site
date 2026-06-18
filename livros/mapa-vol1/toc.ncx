@@ -1,0 +1,405 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="fra">
+  <head>
+    <meta name="dtb:uid" content="a3e8047b-20d9-4255-80ea-eec45c4400b3"/>
+    <meta name="dtb:depth" content="3"/>
+    <meta name="dtb:generator" content="calibre (9.9.0)"/>
+    <meta name="dtb:totalPageCount" content="0"/>
+    <meta name="dtb:maxPageNumber" content="0"/>
+  </head>
+  <docTitle>
+    <text>O MAPA DE UMA VIDA DE SUCESSO TERCEIRA REVISAO</text>
+  </docTitle>
+  <navMap>
+    <navPoint id="num_1" playOrder="1" class="chapter">
+      <navLabel>
+        <text>DIREITOS DE AUTOR</text>
+      </navLabel>
+      <content src="index_split_001.html"/>
+    </navPoint>
+    <navPoint id="num_2" playOrder="2" class="chapter">
+      <navLabel>
+        <text>DEDICATÓRIA</text>
+      </navLabel>
+      <content src="index_split_002.html"/>
+    </navPoint>
+    <navPoint id="num_3" playOrder="3" class="chapter">
+      <navLabel>
+        <text>AGRADECIMENTOS</text>
+      </navLabel>
+      <content src="index_split_003.html"/>
+    </navPoint>
+    <navPoint id="num_4" playOrder="4" class="chapter">
+      <navLabel>
+        <text>PREFACIO GERAL</text>
+      </navLabel>
+      <content src="index_split_004.html"/>
+    </navPoint>
+    <navPoint id="num_5" playOrder="5" class="chapter">
+      <navLabel>
+        <text>SOBRE O AUTOR</text>
+      </navLabel>
+      <content src="index_split_006.html"/>
+    </navPoint>
+    <navPoint id="num_6" playOrder="6" class="chapter">
+      <navLabel>
+        <text>INTRODUÇÃO GERAL</text>
+      </navLabel>
+      <content src="index_split_008.html"/>
+    </navPoint>
+    <navPoint id="num_7" playOrder="7" class="chapter">
+      <navLabel>
+        <text>PARTE I</text>
+      </navLabel>
+      <content src="index_split_009.html"/>
+      <navPoint id="num_8" playOrder="8" class="chapter">
+        <navLabel>
+          <text>A GÉNESE</text>
+        </navLabel>
+        <content src="index_split_009.html#id_Toc232588867"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_9" playOrder="9" class="chapter">
+      <navLabel>
+        <text>INTRODUÇÃO DA PARTE I</text>
+      </navLabel>
+      <content src="index_split_010.html"/>
+    </navPoint>
+    <navPoint id="num_10" playOrder="10" class="chapter">
+      <navLabel>
+        <text>CAPÍTULO 1 — A GÉNESE</text>
+      </navLabel>
+      <content src="index_split_010.html#id_Toc232588869"/>
+      <navPoint id="num_11" playOrder="11" class="chapter">
+        <navLabel>
+          <text>O Plano Eterno de Deus</text>
+        </navLabel>
+        <content src="index_split_011.html"/>
+      </navPoint>
+      <navPoint id="num_12" playOrder="12" class="chapter">
+        <navLabel>
+          <text>O Sucesso Começa Antes do Nascimento</text>
+        </navLabel>
+        <content src="index_split_011.html#id_Toc232588871"/>
+      </navPoint>
+      <navPoint id="num_13" playOrder="13" class="chapter">
+        <navLabel>
+          <text>O Mundo Espiritual e as Batalhas da Génese</text>
+        </navLabel>
+        <content src="index_split_011.html#id_Toc232588872"/>
+      </navPoint>
+      <navPoint id="num_14" playOrder="14" class="chapter">
+        <navLabel>
+          <text>O Significado do Ponto 0</text>
+        </navLabel>
+        <content src="index_split_011.html#id_Toc232588873"/>
+      </navPoint>
+      <navPoint id="num_15" playOrder="15" class="chapter">
+        <navLabel>
+          <text>Conclusão — O Fim do Invisível e o Início da Manifestação</text>
+        </navLabel>
+        <content src="index_split_011.html#id_Toc232588874"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_16" playOrder="16" class="chapter">
+      <navLabel>
+        <text>PARTE II</text>
+      </navLabel>
+      <content src="index_split_012.html"/>
+      <navPoint id="num_17" playOrder="17" class="chapter">
+        <navLabel>
+          <text>AS 5 ETAPAS DA DESGRAÇA</text>
+        </navLabel>
+        <content src="index_split_012.html#id_Toc232588876"/>
+      </navPoint>
+      <navPoint id="num_18" playOrder="18" class="chapter">
+        <navLabel>
+          <text>A Formação da Queda Humana</text>
+        </navLabel>
+        <content src="index_split_012.html#id_Toc232588877"/>
+      </navPoint>
+      <navPoint id="num_19" playOrder="19" class="chapter">
+        <navLabel>
+          <text>O Primeiro Ambiente da Vida</text>
+        </navLabel>
+        <content src="index_split_014.html#id_Toc232588878"/>
+      </navPoint>
+      <navPoint id="num_20" playOrder="20" class="chapter">
+        <navLabel>
+          <text>As Primeiras Feridas Invisíveis</text>
+        </navLabel>
+        <content src="index_split_015.html"/>
+      </navPoint>
+      <navPoint id="num_21" playOrder="21" class="chapter">
+        <navLabel>
+          <text>Heranças Que Atravessam Gerações</text>
+        </navLabel>
+        <content src="index_split_015.html#id_Toc232588880"/>
+      </navPoint>
+      <navPoint id="num_22" playOrder="22" class="chapter">
+        <navLabel>
+          <text>O Perigo de Crescer Longe do Propósito</text>
+        </navLabel>
+        <content src="index_split_015.html#id_Toc232588881"/>
+      </navPoint>
+      <navPoint id="num_23" playOrder="23" class="chapter">
+        <navLabel>
+          <text>Conclusão</text>
+        </navLabel>
+        <content src="index_split_015.html#id_Toc232588882"/>
+      </navPoint>
+      <navPoint id="num_24" playOrder="24" class="chapter">
+        <navLabel>
+          <text>O Crescimento Num Mundo Marcado Pela Queda</text>
+        </navLabel>
+        <content src="index_split_016.html#id_Toc232588883"/>
+      </navPoint>
+      <navPoint id="num_25" playOrder="25" class="chapter">
+        <navLabel>
+          <text>Quando a Vida se Torna uma Busca por Aprovação</text>
+        </navLabel>
+        <content src="index_split_016.html#id_Toc232588884"/>
+      </navPoint>
+      <navPoint id="num_26" playOrder="26" class="chapter">
+        <navLabel>
+          <text>O Modelo de Crescimento de Jesus</text>
+        </navLabel>
+        <content src="index_split_016.html#id_Toc232588885"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_27" playOrder="27" class="chapter">
+      <navLabel>
+        <text>ETAPA 3 — O SUCESSO ILUSÓRIO</text>
+      </navLabel>
+      <content src="index_split_017.html"/>
+      <navPoint id="num_28" playOrder="28" class="chapter">
+        <navLabel>
+          <text>O Engano Que Começou no Éden</text>
+        </navLabel>
+        <content src="index_split_017.html#id_Toc232588887"/>
+      </navPoint>
+      <navPoint id="num_29" playOrder="29" class="chapter">
+        <navLabel>
+          <text>O Fascínio pelo Poder e pela Aparência</text>
+        </navLabel>
+        <content src="index_split_017.html#id_Toc232588888"/>
+      </navPoint>
+      <navPoint id="num_30" playOrder="30" class="chapter">
+        <navLabel>
+          <text>O Brilho das Trevas</text>
+        </navLabel>
+        <content src="index_split_017.html#id_Toc232588889"/>
+      </navPoint>
+      <navPoint id="num_31" playOrder="31" class="chapter">
+        <navLabel>
+          <text>Os Pactos Invisíveis</text>
+        </navLabel>
+        <content src="index_split_017.html#id_Toc232588890"/>
+      </navPoint>
+      <navPoint id="num_32" playOrder="32" class="chapter">
+        <navLabel>
+          <text>O Sucesso Construído Sobre a Injustiça</text>
+        </navLabel>
+        <content src="index_split_017.html#id_Toc232588891"/>
+      </navPoint>
+      <navPoint id="num_33" playOrder="33" class="chapter">
+        <navLabel>
+          <text>Conclusão</text>
+        </navLabel>
+        <content src="index_split_017.html#id_Toc232588892"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_34" playOrder="34" class="chapter">
+      <navLabel>
+        <text>ETAPA 4 — O FIM DA ILUSÃO</text>
+      </navLabel>
+      <content src="index_split_018.html"/>
+      <navPoint id="num_35" playOrder="35" class="chapter">
+        <navLabel>
+          <text>Introdução — Quando a Conta Finalmente Chega</text>
+        </navLabel>
+        <content src="index_split_018.html#id_Toc232588894"/>
+      </navPoint>
+      <navPoint id="num_36" playOrder="36" class="chapter">
+        <navLabel>
+          <text>O Princípio da Semente e da Colheita</text>
+        </navLabel>
+        <content src="index_split_018.html#id_Toc232588895"/>
+      </navPoint>
+      <navPoint id="num_37" playOrder="37" class="chapter">
+        <navLabel>
+          <text>A Lição de Adão e Eva</text>
+        </navLabel>
+        <content src="index_split_018.html#id_Toc232588896"/>
+      </navPoint>
+      <navPoint id="num_38" playOrder="38" class="chapter">
+        <navLabel>
+          <text>Quando a Desgraça se Aproxima</text>
+        </navLabel>
+        <content src="index_split_018.html#id_Toc232588897"/>
+      </navPoint>
+      <navPoint id="num_39" playOrder="39" class="chapter">
+        <navLabel>
+          <text>Conclusão</text>
+        </navLabel>
+        <content src="index_split_018.html#id_Toc232588898"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_40" playOrder="40" class="chapter">
+      <navLabel>
+        <text>ETAPA 5 — A CRISE EXISTENCIAL</text>
+      </navLabel>
+      <content src="index_split_018.html#id_Toc232588899"/>
+      <navPoint id="num_41" playOrder="41" class="chapter">
+        <navLabel>
+          <text>Quando a Vida Perde o Sentido</text>
+        </navLabel>
+        <content src="index_split_018.html#id_Toc232588900"/>
+      </navPoint>
+      <navPoint id="num_42" playOrder="42" class="chapter">
+        <navLabel>
+          <text>O Perigo da Desagregação Interior</text>
+        </navLabel>
+        <content src="index_split_018.html#id_Toc232588901"/>
+      </navPoint>
+      <navPoint id="num_43" playOrder="43" class="chapter">
+        <navLabel>
+          <text>Quando a Crise se Transforma em Caos</text>
+        </navLabel>
+        <content src="index_split_018.html#id_Toc232588902"/>
+      </navPoint>
+      <navPoint id="num_44" playOrder="44" class="chapter">
+        <navLabel>
+          <text>Conclusão</text>
+        </navLabel>
+        <content src="index_split_019.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_45" playOrder="45" class="chapter">
+      <navLabel>
+        <text>CONCLUSÃO DA PARTE II</text>
+      </navLabel>
+      <content src="index_split_020.html"/>
+    </navPoint>
+    <navPoint id="num_46" playOrder="46" class="chapter">
+      <navLabel>
+        <text>PARTE 3 - AS 7 FUNDAÇÕES DA CONSTRUÇÃO DO VERDADEIRO SUCESSO</text>
+      </navLabel>
+      <content src="index_split_021.html"/>
+    </navPoint>
+    <navPoint id="num_47" playOrder="47" class="chapter">
+      <navLabel>
+        <text>RECAPITULAÇÃO — ETAPA 1: NASCIMENTO</text>
+      </navLabel>
+      <content src="index_split_022.html"/>
+    </navPoint>
+    <navPoint id="num_48" playOrder="48" class="chapter">
+      <navLabel>
+        <text>RECAPITULAÇÃO — ETAPA 2 : CRESCIMENTO NATURAL | A CONSTRUÇÃO INVISÍVEL DO INTERIOR</text>
+      </navLabel>
+      <content src="index_split_022.html#id_Toc232588907"/>
+    </navPoint>
+    <navPoint id="num_49" playOrder="49" class="chapter">
+      <navLabel>
+        <text>RECAPITULAÇÃO — ETAPA 3 : O FIM DA ILUSÃO</text>
+      </navLabel>
+      <content src="index_split_023.html"/>
+    </navPoint>
+    <navPoint id="num_50" playOrder="50" class="chapter">
+      <navLabel>
+        <text>RECAPITULAÇÃO — ETAPA 4 : CRISE EXISTENCIAL</text>
+      </navLabel>
+      <content src="index_split_024.html"/>
+    </navPoint>
+    <navPoint id="num_51" playOrder="51" class="chapter">
+      <navLabel>
+        <text>ETAPA 5 — REVELAÇÃO : O PONTO DE VIRADA | QUANDO A LUZ CHEGA E MUDA TUDO</text>
+      </navLabel>
+      <content src="index_split_024.html#id_Toc232588910"/>
+      <navPoint id="num_52" playOrder="52" class="chapter">
+        <navLabel>
+          <text>Conclusão</text>
+        </navLabel>
+        <content src="index_split_027.html"/>
+      </navPoint>
+      <navPoint id="num_53" playOrder="53" class="chapter">
+        <navLabel>
+          <text>Porque o Preparo É Indispensável</text>
+        </navLabel>
+        <content src="index_split_028.html#id_Toc232588912"/>
+      </navPoint>
+      <navPoint id="num_54" playOrder="54" class="chapter">
+        <navLabel>
+          <text>A Renovação da Mente Como Centro da Transformação</text>
+        </navLabel>
+        <content src="index_split_028.html#id_Toc232588913"/>
+      </navPoint>
+      <navPoint id="num_55" playOrder="55" class="chapter">
+        <navLabel>
+          <text>Os Três Movimentos do Preparo Interno</text>
+        </navLabel>
+        <content src="index_split_028.html#id_Toc232588914"/>
+      </navPoint>
+      <navPoint id="num_56" playOrder="56" class="chapter">
+        <navLabel>
+          <text>Fé Não Substitui Preparo</text>
+        </navLabel>
+        <content src="index_split_028.html#id_Toc232588915"/>
+      </navPoint>
+      <navPoint id="num_57" playOrder="57" class="chapter">
+        <navLabel>
+          <text>Os Frutos do Preparo Interno</text>
+        </navLabel>
+        <content src="index_split_029.html#id_Toc232588916"/>
+      </navPoint>
+      <navPoint id="num_58" playOrder="58" class="chapter">
+        <navLabel>
+          <text>Conclusão</text>
+        </navLabel>
+        <content src="index_split_030.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_59" playOrder="59" class="chapter">
+      <navLabel>
+        <text>ETAPA 7 — RESTAURAÇÃO</text>
+      </navLabel>
+      <content src="index_split_030.html#id_Toc232588918"/>
+      <navPoint id="num_60" playOrder="60" class="chapter">
+        <navLabel>
+          <text>A Restauração do Coração</text>
+        </navLabel>
+        <content src="index_split_030.html#id_Toc232588919"/>
+      </navPoint>
+      <navPoint id="num_61" playOrder="61" class="chapter">
+        <navLabel>
+          <text>A Estabilização da Mente</text>
+        </navLabel>
+        <content src="index_split_030.html#id_Toc232588920"/>
+      </navPoint>
+      <navPoint id="num_62" playOrder="62" class="chapter">
+        <navLabel>
+          <text>A Reconstrução da Identidade</text>
+        </navLabel>
+        <content src="index_split_030.html#id_Toc232588921"/>
+      </navPoint>
+      <navPoint id="num_63" playOrder="63" class="chapter">
+        <navLabel>
+          <text>O Fruto da Restauração: Coerência</text>
+        </navLabel>
+        <content src="index_split_031.html#id_Toc232588922"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_64" playOrder="64" class="chapter">
+      <navLabel>
+        <text>CONCLUSÃO GERAL</text>
+      </navLabel>
+      <content src="index_split_033.html"/>
+    </navPoint>
+    <navPoint id="num_65" playOrder="65" class="chapter">
+      <navLabel>
+        <text>CADERNO DE REFLEXÃO PESSOAL</text>
+      </navLabel>
+      <content src="index_split_034.html"/>
+    </navPoint>
+  </navMap>
+</ncx>
