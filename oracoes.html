@@ -1,15 +1,18 @@
-
 <!DOCTYPE html>
+
 <html lang="pt">
 
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Orações MHD</title>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+href="style.css">
 
 </head>
 
@@ -19,15 +22,32 @@
 
 <div class="container">
 
-<h1>Orações MHD</h1>
+<h1>🙏 Orações MHD</h1>
 
 <p>
-Ore connosco e fortaleça a sua caminhada com Deus.
+
+Fortaleça a sua fé através da oração,
+adoração e comunhão com Deus.
+
 </p>
 
-<a href="index.html" class="btn primary">
-Voltar ao Início
+<div class="header-buttons">
+
+<a href="index.html"
+class="btn primary">
+
+🏠 Voltar ao Início
+
 </a>
+
+<a href="favoritos.html"
+class="btn secondary">
+
+⭐ Favoritos
+
+</a>
+
+</div>
 
 </div>
 
@@ -37,67 +57,41 @@ Voltar ao Início
 
 <div class="container">
 
-<h2>Orações em Destaque</h2>
+<h2>
 
-<div class="oracoes-grid">
+🎧 Biblioteca de Orações
 
-<div class="oracao-card">
+</h2>
 
-<img
-src="images/oracoes/oracao-manha.jpg"
-alt="Oração da Manhã">
+<p class="subtitulo">
 
-<h3>Oração geral</h3>
+Escolha uma categoria e encontre a oração
+certa para este momento da sua vida.
 
-<p>
-Um momento na presença de Deus.
 </p>
 
-<a href="#" class="btn primary">
-Assistir
-</a>
+<select id="filtroCategoria">
 
-<br><br>
+<option value="Todos">
 
-<button class="btn secondary like-btn">
-👍 Like
-</button>
+Todas as Categorias
 
-<button class="btn secondary share-btn">
-📤 Partilhar
-</button>
+</option>
 
-</div>
+</select>
 
-<div class="oracao-card">
+<input
+type="text"
+id="pesquisaOracao"
+placeholder="🔍 Procurar oração...">
 
-<div class="oracao-card">
+<h3 id="tituloCategoria">
 
-<img
-src="images/oracoes/oracao-familia.jpg"
-alt="Oração pela Família">
+Todas as Categorias
 
-<h3>Oração pela Família</h3>
+</h3>
 
-<p>
-Apresente a sua família diante de Deus.
-</p>
-
-<a href="#" class="btn primary">
-Assistir
-</a>
-
-<br><br>
-
-<button class="btn secondary like-btn">
-👍 Like
-</button>
-
-<button class="btn secondary share-btn">
-📤 Partilhar
-</button>
-
-</div>
+<div id="listaOracoes">
 
 </div>
 
@@ -105,19 +99,15 @@ Assistir
 
 </section>
 
-<h2>Comentários</h2>
-
-<textarea
-placeholder="Partilhe o que esta oração significou para si">
-</textarea>
-
-<button class="btn primary">
-Enviar Comentário
-</button>
-
 <section class="pedido-oracao">
 
 <div class="container">
+
+<h2>
+
+🙏 Pedido de Oração
+
+</h2>
 
 <p>
 
@@ -169,55 +159,10 @@ Enviar Pedido
 
 </section>
 
-<script>
+<script src="oracoes.js"></script>
 
-document.querySelectorAll(".share-btn")
-.forEach(botao => {
-
-botao.addEventListener("click", () => {
-
-if(navigator.share){
-
-navigator.share({
-
-title:"Orações MHD",
-
-text:"Venha orar connosco no MHD",
-
-url:window.location.href
-
-});
-
-}else{
-
-navigator.clipboard.writeText(
-window.location.href
-);
-
-alert("Link copiado!");
-
-}
-
-});
-
-});
-
-document.querySelectorAll(".like-btn")
-.forEach(botao => {
-
-botao.addEventListener("click", () => {
-
-botao.innerHTML = "❤️ Gostei";
-
-});
-
-});
-
-</script>
-
-
+<script src="oracoes-app.js"></script>
 
 </body>
 
 </html>
-

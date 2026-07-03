@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -7,158 +6,231 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Podcast MHD</title>
-
-<link rel="stylesheet" href="style.css">
+<title>MHD Cast | Biblioteca MHD</title>
 
 <style>
 
-.podcast-hero{
-
-background:linear-gradient(135deg,#5a189a,#7b2cbf);
-
-color:white;
-
-padding:100px 20px;
-
-text-align:center;
-
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
-.podcast-hero h1{
-
-font-size:50px;
-
-margin-bottom:20px;
-
+body{
+    background:#f5f5f5;
+    color:#333;
 }
 
-.podcast-hero p{
+.container{
+    width:90%;
+    max-width:1300px;
+    margin:auto;
+}
 
-max-width:900px;
+/* HERO */
 
-margin:auto;
+.media-hero{
+    background:
+    linear-gradient(rgba(90,24,154,.88),
+    rgba(123,44,191,.88)),
+    url('img/podcast-bg.jpg');
 
-font-size:20px;
+    background-size:cover;
+    background-position:center;
 
-line-height:1.8;
+    color:white;
+    text-align:center;
+    padding:120px 20px;
+}
 
+.media-hero h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.media-hero p{
+    max-width:900px;
+    margin:auto;
+    font-size:20px;
+    line-height:1.8;
 }
 
 .platform-buttons{
-
-margin-top:40px;
-
-display:flex;
-
-justify-content:center;
-
-gap:20px;
-
-flex-wrap:wrap;
-
+    margin-top:40px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
 .platform-buttons a{
-
-background:white;
-
-color:#5a189a;
-
-padding:15px 30px;
-
-border-radius:50px;
-
-font-weight:bold;
-
-text-decoration:none;
-
+    background:white;
+    color:#5a189a;
+    text-decoration:none;
+    padding:15px 30px;
+    border-radius:50px;
+    font-weight:bold;
+    transition:.3s;
 }
 
-.tematicas{
-
-padding:80px 20px;
-
-background:#f8f5ff;
-
+.platform-buttons a:hover{
+    transform:translateY(-3px);
 }
 
-.tematicas h2{
+/* PESQUISA */
 
-text-align:center;
-
-margin-bottom:40px;
-
+.search-section{
+    padding:40px 20px;
+    background:white;
 }
 
-.tematicas-grid{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(250px,1fr));
-
-gap:20px;
-
+.search-box{
+    max-width:700px;
+    margin:auto;
 }
 
-.tema{
-
-background:white;
-
-padding:25px;
-
-border-radius:15px;
-
-text-align:center;
-
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-
+.search-box input{
+    width:100%;
+    padding:18px;
+    border:none;
+    border-radius:50px;
+    background:#f1f1f1;
+    font-size:16px;
 }
 
-.series{
+/* DESTAQUE */
 
-padding:80px 20px;
-
+.featured{
+    padding:80px 20px;
 }
 
-.series h2{
-
-text-align:center;
-
-margin-bottom:40px;
-
+.featured h2{
+    text-align:center;
+    margin-bottom:40px;
 }
 
-.serie-card{
-
-background:white;
-
-padding:30px;
-
-border-radius:15px;
-
-margin-bottom:30px;
-
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-
+.featured-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 5px 25px rgba(0,0,0,.08);
 }
 
-.serie-card h3{
-
-color:#5a189a;
-
-margin-bottom:10px;
-
+.featured-card video{
+    width:100%;
 }
 
-.serie-card video{
+.featured-content{
+    padding:30px;
+}
 
-width:100%;
+.featured-content h3{
+    color:#5a189a;
+    margin-bottom:15px;
+}
 
-border-radius:10px;
+/* CATEGORIAS */
 
-margin-top:20px;
+.categories{
+    padding:60px 20px;
+    background:#f8f5ff;
+}
+
+.categories h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.category-grid{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.category-grid button{
+    border:none;
+    background:#5a189a;
+    color:white;
+    padding:12px 25px;
+    border-radius:50px;
+    cursor:pointer;
+}
+
+/* MIDIAS */
+
+.media-section{
+    padding:80px 20px;
+}
+
+.media-section h2{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.media-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
+    gap:30px;
+}
+
+.media-card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.media-card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.media-content{
+    padding:20px;
+}
+
+.media-content h3{
+    color:#5a189a;
+    margin-bottom:10px;
+}
+
+.media-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    margin:15px 0;
+    font-size:14px;
+    color:#666;
+}
+
+.media-card video,
+.media-card audio{
+    width:100%;
+    margin-top:15px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#2b0a4d;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+    margin-top:50px;
+}
+
+@media(max-width:768px){
+
+.media-hero h1{
+    font-size:40px;
+}
+
+.media-grid{
+    grid-template-columns:1fr;
+}
 
 }
 
@@ -168,29 +240,25 @@ margin-top:20px;
 
 <body>
 
-<section class="podcast-hero">
+<!-- HERO -->
+
+<section class="media-hero">
 
 <div class="container">
 
-<h1>
-🎙 Podcast MHD
-</h1>
+<h1>🎙 MHD Cast</h1>
 
 <p>
-
-Reflexões, ensinamentos, testemunhos e conversas inspiradoras para ajudar pessoas a crescer espiritualmente, descobrir o seu propósito e viver uma vida de impacto.
-
+Reflexões, ensinamentos, entrevistas, testemunhos e conteúdos transformadores para fortalecer a fé, desenvolver líderes e ajudar pessoas a viverem o propósito de Deus.
 </p>
 
 <div class="platform-buttons">
 
-<a href="#" target="_blank">
-▶ YouTube
-</a>
+<a href="#">📺 YouTube</a>
 
-<a href="#" target="_blank">
-🎧 Spotify
-</a>
+<a href="#">🎧 Spotify</a>
+
+<a href="#">🍎 Apple Podcasts</a>
 
 </div>
 
@@ -198,39 +266,17 @@ Reflexões, ensinamentos, testemunhos e conversas inspiradoras para ajudar pesso
 
 </section>
 
-<section class="tematicas">
+<!-- PESQUISA -->
+
+<section class="search-section">
 
 <div class="container">
 
-<h2>
-Temáticas
-</h2>
+<div class="search-box">
 
-<div class="tematicas-grid">
-
-<div class="tema">
-🙏 Fé e Crescimento Espiritual
-</div>
-
-<div class="tema">
-📈 Desenvolvimento Pessoal
-</div>
-
-<div class="tema">
-👑 Liderança
-</div>
-
-<div class="tema">
-🎯 Propósito
-</div>
-
-<div class="tema">
-💡 Testemunhos de Transformação
-</div>
-
-<div class="tema">
-🎙 Conversas Inspiradoras
-</div>
+<input
+type="text"
+placeholder="🔍 Procurar vídeos ou áudios...">
 
 </div>
 
@@ -238,53 +284,133 @@ Temáticas
 
 </section>
 
-<section class="series">
+<!-- DESTAQUE -->
+
+<section class="featured">
 
 <div class="container">
 
-<h2>
-Séries de Ensinamento
-</h2>
+<h2>🔥 Episódio em Destaque</h2>
 
-<div class="serie-card">
+<div class="featured-card">
 
-<h3>
-📖 O Poder de Guardar o Coração
-</h3>
+<video controls poster="img/destaque.jpg">
+
+<source src="videos/destaque.mp4" type="video/mp4">
+
+</video>
+
+<div class="featured-content">
+
+<h3>Como Descobrir o Seu Propósito</h3>
 
 <p>
-
-Série dedicada à transformação interior, cura emocional e proteção do coração.
-
+Uma mensagem poderosa sobre identidade, chamado e direção divina para a vida.
 </p>
 
-<video controls>
+</div>
 
-<source
-src="videos/poder-coracao-ep01.mp4"
-type="video/mp4">
+</div>
+
+</div>
+
+</section>
+
+<!-- CATEGORIAS -->
+
+<section class="categories">
+
+<div class="container">
+
+<h2>Temáticas</h2>
+
+<div class="category-grid">
+
+<button>🙏 Fé</button>
+
+<button>👑 Liderança</button>
+
+<button>🎯 Propósito</button>
+
+<button>💡 Desenvolvimento</button>
+
+<button>💰 Finanças</button>
+
+<button>💍 Família</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- VIDEOS -->
+
+<section class="media-section">
+
+<div class="container">
+
+<h2>🎥 Vídeos</h2>
+
+<div class="media-grid">
+
+<div class="media-card">
+
+<img src="img/poder-coracao.jpg">
+
+<div class="media-content">
+
+<h3>O Poder de Guardar o Coração</h3>
+
+<p>
+Série dedicada à cura emocional e transformação interior.
+</p>
+
+<div class="media-meta">
+
+<span>📅 Junho 2026</span>
+
+<span>⏱ 45 min</span>
+
+<span>🙏 Fé</span>
+
+</div>
+
+<video controls poster="img/poder-coracao.jpg">
+
+<source src="videos/poder-coracao-ep01.mp4" type="video/mp4">
 
 </video>
 
 </div>
 
-<div class="serie-card">
+</div>
 
-<h3>
-📘 O Mapa de uma Vida de Sucesso
-</h3>
+<div class="media-card">
+
+<img src="img/mapa-sucesso.jpg">
+
+<div class="media-content">
+
+<h3>Mapa de uma Vida de Sucesso</h3>
 
 <p>
-
-Uma jornada pelas etapas que moldam o destino humano.
-
+Princípios para uma vida de propósito e realização.
 </p>
 
-<video controls>
+<div class="media-meta">
 
-<source
-src="videos/mapa-sucesso-ep01.mp4"
-type="video/mp4">
+<span>📅 Junho 2026</span>
+
+<span>⏱ 38 min</span>
+
+<span>🎯 Propósito</span>
+
+</div>
+
+<video controls poster="img/mapa-sucesso.jpg">
+
+<source src="videos/mapa-sucesso-ep01.mp4" type="video/mp4">
 
 </video>
 
@@ -292,9 +418,100 @@ type="video/mp4">
 
 </div>
 
+</div>
+
+</div>
+
 </section>
+
+<!-- AUDIOS -->
+
+<section class="media-section">
+
+<div class="container">
+
+<h2>🎧 Áudios</h2>
+
+<div class="media-grid">
+
+<div class="media-card">
+
+<img src="img/audio1.jpg">
+
+<div class="media-content">
+
+<h3>Desenvolvendo uma Fé Inabalável</h3>
+
+<p>
+Princípios bíblicos para fortalecer a confiança em Deus.
+</p>
+
+<div class="media-meta">
+
+<span>📅 Junho 2026</span>
+
+<span>⏱ 32 min</span>
+
+<span>🙏 Fé</span>
+
+</div>
+
+<audio controls>
+
+<source src="audios/fe-inabalavel.mp3" type="audio/mpeg">
+
+</audio>
+
+</div>
+
+</div>
+
+<div class="media-card">
+
+<img src="img/audio2.jpg">
+
+<div class="media-content">
+
+<h3>O Caminho da Liderança</h3>
+
+<p>
+Lições práticas para líderes que desejam impactar vidas.
+</p>
+
+<div class="media-meta">
+
+<span>📅 Junho 2026</span>
+
+<span>⏱ 40 min</span>
+
+<span>👑 Liderança</span>
+
+</div>
+
+<audio controls>
+
+<source src="audios/lideranca.mp3" type="audio/mpeg">
+
+</audio>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 Biblioteca MHD - Todos os direitos reservados
+</p>
+
+</footer>
 
 </body>
-
 </html>
 

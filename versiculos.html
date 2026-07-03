@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Versículos MHD</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<h1>📖 Versículos MHD</h1>
+
+<p>
+Versículos organizados por temas para fortalecer a fé,
+renovar a esperança, descobrir o propósito e transformar vidas.
+</p>
+
+<a href="index.html" class="btn primary">
+Voltar ao Início
+</a>
+
+</div>
+
+</header>
+
+<section class="pensamentos-section">
+
+<div class="container">
+
+<select id="filtroCategoria">
+
+<option value="Todos">
+Todas as Categorias
+</option>
+
+</select>
+
+<div id="listaVersiculos"></div>
+
+</div>
+
+</section>
+
+<script src="versiculos.js"></script>
+<script>
+
+console.log("TESTE");
+
+console.log(versiculos);
+
+</script>
+
+<script>
+
+const lista =
+document.getElementById(
+"listaVersiculos"
+);
+
+const filtro =
+document.getElementById(
+"filtroCategoria"
+);
+
+const nomesCategorias = {
+
+fe:"Fé",
+esperanca:"Esperança",
+proposito:"Propósito",
+sabedoria:"Sabedoria",
+transformacao:"Transformação",
+carater:"Caráter",
+disciplina:"Disciplina",
+sucesso:"Sucesso",
+lideranca:"Liderança",
+perseveranca:"Perseverança",
+oracao:"Oração",
+amor:"Amor e Serviço"
+
+};
+
+function mostrarVersiculos(
+categoria = "Todos"
+){
+
+lista.innerHTML = "";
+
+if(categoria === "Todos"){
+
+Object.entries(versiculos)
+.forEach(([cat,listaCategoria]) => {
+
+listaCategoria.forEach(v => {
+
+lista.innerHTML += `
+
+<div class="quote-card">
+
+<h3>
+📖 ${nomesCategorias[cat]}
+</h3>
+
+<p>
+"${v.texto}"
+</p>
+
+<span>
+${v.referencia}
+</span>
+
+<div class="quote-actions">
+
+<button
+class="copiar-btn"
+data-texto="${v.texto} (${v.referencia})">
+
+📋 Copiar
+
+</button>
+
+<button
+class="partilhar-btn"
+data-texto="${v.texto} (${v.referencia})">
+
+📤 Partilhar
+
+</button>
+
+<button
+class="favorito-btn"
+data-texto="${v.texto} (${v.referencia})">
+
+❤️ Favorito
+
+</button>
+
+</div>
+`;
+
+});
+
+});
+
+}else{
+
+(versiculos[categoria] || [])
+.forEach(v => {
+
+lista.innerHTML += `
+
+<div class="quote-card">
+
+<h3>
+📖 ${nomesCategorias[categoria]}
+</h3>
+
+<p>
+"${v.texto}"
+</p>
+
+<span>
+${v.referencia}
+</span>
+
+<div class="quote-actions">
+
+<button
+class="copiar-btn"
+data-texto="${v.texto} (${v.referencia})">
+
+📋 Copiar
+
+</button>
+
+<button
+class="partilhar-btn"
+data-texto="${v.texto} (${v.referencia})">
+
+📤 Partilhar
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+}
+
+Object.keys(versiculos)
+.forEach(cat => {
+
+filtro.innerHTML +=
+
+`<option value="${cat}">
+${nomesCategorias[cat]}
+</option>`;
+
+});
+
+filtro.addEventListener(
+
+"change",
+
+e => mostrarVersiculos(
+e.target.value
+)
+
+);
+
+function copiarTexto(texto){
+
+navigator.clipboard
+.writeText(texto);
+
+alert(
+"Versículo copiado!"
+);
+
+}
+
+function partilharTexto(texto){
+
+window.open(
+
+"https://wa.me/?text=" +
+encodeURIComponent(texto),
+
+"_blank"
+
+);
+
+}
+
+function favoritarTexto(texto){
+
+let favoritos =
+JSON.parse(
+localStorage.getItem("favoritos")
+) || [];
+
+if(!favoritos.includes(texto)){
+
+favoritos.push(texto);
+
+localStorage.setItem(
+"favoritos",
+JSON.stringify(favoritos)
+);
+
+alert("Adicionado aos favoritos!");
+
+}else{
+
+alert("Já está nos favoritos!");
+
+}
+
+}
+
+
+document.addEventListener(
+
+"click",
+
+function(e){
+
+if(
+e.target.classList.contains(
+"copiar-btn"
+)
+){
+
+copiarTexto(
+e.target.dataset.texto
+);
+
+}
+
+if(
+e.target.classList.contains(
+"partilhar-btn"
+)
+){
+
+partilharTexto(
+e.target.dataset.texto
+);
+
+}
+if(
+e.target.classList.contains(
+"favorito-btn"
+)
+){
+
+favoritarTexto(
+e.target.dataset.texto
+);
+
+}
+
+}
+
+);
+
+mostrarVersiculos();
+
+</script>
+
+</body>
+
+</html>

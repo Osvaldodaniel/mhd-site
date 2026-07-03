@@ -60,6 +60,8 @@ gtag('config', 'G-DHQ2TN798B');
 
 <li><a href="pensamentos.html">Pensamentos</a></li>
 
+<li><a href="versiculos.html">Versículos</a></li>
+
 <li><a href="favoritos.html">Favoritos</a></li>
 
 <li><a href="podcast.html">Podcast</a></li>
@@ -82,15 +84,31 @@ gtag('config', 'G-DHQ2TN798B');
 
 <div class="container">
 
-<h2>💭 Frase do Dia</h2>
+<div class="inspiracao-grid">
 
 <div class="frase-card">
+
+<h2>💭 Frase do Dia</h2>
 
 <p id="fraseDiaTexto"></p>
 
 <span>
 — Osvaldo MUTUQUE
 </span>
+
+</div>
+
+<div class="divisor"></div>
+
+<div class="versiculo-card">
+
+<h2>📖 Versículo do Dia</h2>
+
+<p id="versiculoDiaTexto"></p>
+
+<span id="referenciaVersiculo"></span>
+
+</div>
 
 </div>
 
@@ -818,15 +836,19 @@ Engenheiro • Autor • Investigador • Fundador do MHD
 
 <p>
 
-Osvaldo Mutuque é autor de livros dedicados ao crescimento espiritual, desenvolvimento pessoal e transformação de vidas.
+Osvaldo Mutuque é engenheiro, investigador, escritor e fundador do projeto <strong>MHD – Minha História Será Diferente</strong>. Dedica-se a inspirar jovens a descobrir o seu potencial, fortalecer a sua fé, desenvolver disciplina e construir uma vida de propósito, excelência e impacto.
 
-Através da escrita, do ensino e dos projetos do MHD – Minha História Será Diferente, procura inspirar pessoas a desenvolver o seu potencial, fortalecer a sua fé e construir uma vida de propósito.
+</p>
 
-Os seus livros abordam temas como caráter, disciplina, sucesso, liderança, propósito, crescimento espiritual e transformação pessoal, oferecendo princípios práticos para a vida diária.
+<p>
 
-A sua missão é transmitir conhecimento, esperança e inspiração a pessoas de diferentes culturas, idiomas e nações.
+Acredita que muitos jovens possuem capacidades extraordinárias, mas acabam por perder oportunidades devido à falta de direção, hábitos inadequados, distrações constantes e ausência de mentoria. Por isso, dedica-se à criação de conteúdos que promovem crescimento espiritual, desenvolvimento pessoal, liderança e preparação para o futuro.
 
+</p>
 
+<p>
+
+Através dos seus livros, estudos, reflexões, podcasts e projetos educativos, procura transmitir princípios práticos que ajudem a nova geração a crescer com sabedoria, conhecimento, caráter e propósito.
 
 </p>
 
@@ -962,6 +984,7 @@ target="_blank">
 </a>
 
 <script src="pensamentos.js"></script>
+<script src="versiculos.js"></script>
 
 <script>
 
@@ -970,15 +993,28 @@ document.getElementById("fraseDiaTexto");
 
 const hoje = new Date();
 
-const numeroDia = Math.floor(
-hoje.getTime() / 86400000
-);
+const numeroDia =
+Math.floor(hoje.getTime() / 86400000);
 
-const indice =
+const indiceFrase =
 numeroDia % pensamentos.length;
 
 fraseDia.innerText =
-pensamentos[indice].texto;
+pensamentos[indiceFrase].texto;
+
+const versiculo =
+obterVersiculoDoDia();
+
+document.getElementById(
+"versiculoDiaTexto"
+).innerText =
+versiculo.texto;
+
+document.getElementById(
+"referenciaVersiculo"
+).innerText =
+versiculo.referencia;
+
 
 </script>
 

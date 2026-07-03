@@ -158,20 +158,57 @@ JSON.parse(
 localStorage.getItem("favoritos")
 ) || [];
 
-if(!favoritos.includes(texto)){
-
-favoritos.push(texto);
-
-localStorage.setItem(
-"favoritos",
-JSON.stringify(favoritos)
+const pensamento =
+pensamentos.find(
+p => p.texto === texto
 );
 
-alert("Adicionado aos favoritos!");
+if(!pensamento){
+return;
+}
+
+const existe =
+favoritos.some(item =>
+
+item.tipo === "pensamento" &&
+
+item.conteudo === texto
+
+);
+
+if(!existe){
+
+favoritos.push({
+
+id: Date.now().toString(),
+
+tipo:"pensamento",
+
+titulo: pensamento.categoria,
+
+conteudo: pensamento.texto,
+
+autor:"Osvaldo MUTUQUE"
+
+});
+
+localStorage.setItem(
+
+"favoritos",
+
+JSON.stringify(favoritos)
+
+);
+
+alert(
+"Adicionado aos favoritos!"
+);
 
 }else{
 
-alert("Já está nos favoritos!");
+alert(
+"Já está nos favoritos!"
+);
 
 }
 

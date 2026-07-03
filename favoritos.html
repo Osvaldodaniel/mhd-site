@@ -1,14 +1,18 @@
 <!DOCTYPE html>
+
 <html lang="pt">
 
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Meus Favoritos | Osvaldo MUTUQUE</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="style.css">
+<title>Meus Favoritos | MHD</title>
+
+<link rel="stylesheet"
+href="style.css">
 
 </head>
 
@@ -18,14 +22,19 @@
 
 <div class="container">
 
-<h1>⭐ Meus Pensamentos Favoritos</h1>
+<h1>⭐ Meus Favoritos</h1>
 
 <p>
-Os pensamentos guardados durante a sua leitura.
+
+Todos os conteúdos guardados durante a sua jornada.
+
 </p>
 
-<a href="pensamentos.html" class="btn primary">
-Voltar aos Pensamentos
+<a href="index.html"
+class="btn primary">
+
+🏠 Voltar ao Início
+
 </a>
 
 </div>
@@ -36,6 +45,53 @@ Voltar aos Pensamentos
 
 <div class="container">
 
+<div class="favoritos-info">
+
+<h3 id="contadorFavoritos">
+
+Total de Favoritos: 0
+
+</h3>
+
+<input
+type="text"
+id="pesquisaFavoritos"
+placeholder="🔍 Procurar favorito...">
+
+<select id="filtroFavoritos">
+
+<option value="Todos">
+⭐ Todos
+</option>
+
+<option value="pensamento">
+💭 Pensamentos
+</option>
+
+<option value="versiculo">
+📖 Versículos
+</option>
+
+<option value="oracao">
+🙏 Orações
+</option>
+
+<option value="podcast">
+🎙 Podcasts
+</option>
+
+<option value="livro">
+📚 Livros
+</option>
+
+<option value="estudo">
+📄 Estudos Bíblicos
+</option>
+
+</select>
+
+</div>
+
 <div id="listaFavoritos"></div>
 
 </div>
@@ -45,12 +101,109 @@ Voltar aos Pensamentos
 <script>
 
 const lista =
-document.getElementById("listaFavoritos");
+document.getElementById(
+"listaFavoritos"
+);
 
-const favoritos =
-JSON.parse(
-localStorage.getItem("favoritos")
+const pesquisa =
+document.getElementById(
+"pesquisaFavoritos"
+);
+
+const filtro =
+document.getElementById(
+"filtroFavoritos"
+);
+
+function carregarFavoritos(){
+
+return JSON.parse(
+localStorage.getItem(
+"favoritos"
+)
 ) || [];
+
+}
+
+function obterIcone(tipo){
+
+switch(tipo){
+
+case "pensamento":
+return "💭";
+
+case "versiculo":
+return "📖";
+
+case "oracao":
+return "🙏";
+
+case "podcast":
+return "🎙";
+
+case "livro":
+return "📚";
+
+case "estudo":
+return "📄";
+
+default:
+return "⭐";
+
+}
+
+}
+
+function mostrarFavoritos(){
+
+let favoritos =
+carregarFavoritos();
+
+const textoPesquisa =
+pesquisa.value.toLowerCase();
+
+const categoria =
+filtro.value;
+
+if(categoria !== "Todos"){
+
+favoritos =
+favoritos.filter(item =>
+
+item.tipo &&
+item.tipo.toLowerCase() ===
+categoria.toLowerCase()
+
+);
+
+}
+
+if(textoPesquisa){
+
+favoritos =
+favoritos.filter(item =>
+
+(item.titulo || "")
+.toLowerCase()
+.includes(textoPesquisa)
+
+||
+
+(item.conteudo || "")
+.toLowerCase()
+.includes(textoPesquisa)
+
+);
+
+}
+
+document.getElementById(
+"contadorFavoritos"
+).textContent =
+
+`Total de Favoritos: ${favoritos.length}`;
+
+lista.innerHTML = "";
 
 if(favoritos.length === 0){
 
@@ -58,32 +211,87 @@ lista.innerHTML = `
 
 <div class="quote-card">
 
-<h3>Nenhum favorito guardado</h3>
+<h3>
+Nenhum favorito encontrado
+</h3>
 
 <p>
-Ainda não guardou nenhum pensamento.
+Não existem conteúdos para mostrar.
 </p>
 
 </div>
 
 `;
 
-}else{
+return;
 
-favoritos.forEach(frase => {
+}
+
+favoritos.forEach(item => {
+
+if(typeof item === "string"){
 
 lista.innerHTML += `
 
 <div class="quote-card">
 
-<p>"${frase}"</p>
+<h3>⭐ Favorito</h3>
 
-<span>
-— Osvaldo MUTUQUE
-</span>
+<p>${item}</p>
 
 <button
-onclick="removerFavorito('${frase}')">
+class="btn secondary"
+onclick="removerFavoritoAntigo('${item}')">
+
+🗑 Remover
+
+</button>
+
+</div>
+
+`;
+
+return;
+
+}
+
+lista.innerHTML += `
+
+<div class="quote-card">
+
+<h3>
+
+${obterIcone(item.tipo)}
+
+${item.titulo || "Sem título"}
+
+<br>
+
+TIPO: ${item.tipo}
+
+</h3>
+
+${
+item.conteudo
+?
+`<p>${item.conteudo}</p>`
+:
+""
+}
+
+${
+item.referencia
+?
+`<span>${item.referencia}</span>`
+:
+""
+}
+
+<br><br>
+
+<button
+class="btn secondary"
+onclick="removerFavorito('${item.id || ""}','${item.titulo || ""}')">
 
 🗑 Remover
 
@@ -94,19 +302,48 @@ onclick="removerFavorito('${frase}')">
 `;
 
 });
+}
+
+function removerFavorito(id,titulo){
+
+let favoritos =
+carregarFavoritos();
+
+favoritos =
+favoritos.filter(item => {
+
+if(id && item.id){
+
+return item.id !== id;
 
 }
 
-function removerFavorito(frase){
+return item.titulo !== titulo;
+
+});
+
+localStorage.setItem(
+
+"favoritos",
+
+JSON.stringify(
+favoritos
+)
+
+);
+
+mostrarFavoritos();
+
+}
+
+function removerFavoritoAntigo(texto){
 
 let favoritos =
-JSON.parse(
-localStorage.getItem("favoritos")
-) || [];
+carregarFavoritos();
 
 favoritos =
 favoritos.filter(
-f => f !== frase
+f => f !== texto
 );
 
 localStorage.setItem(
@@ -114,11 +351,24 @@ localStorage.setItem(
 JSON.stringify(favoritos)
 );
 
-location.reload();
+mostrarFavoritos();
 
 }
+
+pesquisa.addEventListener(
+"input",
+mostrarFavoritos
+);
+
+filtro.addEventListener(
+"change",
+mostrarFavoritos
+);
+
+mostrarFavoritos();
 
 </script>
 
 </body>
+
 </html>
