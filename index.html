@@ -64,8 +64,10 @@ gtag('config', 'G-DHQ2TN798B');
 
 <li><a href="favoritos.html">Favoritos</a></li>
 
+<!--
 <li><a href="podcast.html">Podcast</a></li>
 <li><a href="oracoes.html">Orações</a></li>
+-->
 
 <li><a href="#doacoes">Apoiar</a></li>
 
@@ -387,148 +389,7 @@ Explorar Biblioteca Completa
 
 </div>
 
-</section>
 
-<section id="podcast">
-
-<div class="container">
-
-<h2>🎙 Podcast MHD</h2>
-
-<p class="section-subtitle">
-
-Conversas inspiradoras sobre fé, propósito, liderança, crescimento pessoal e transformação de vidas.
-
-</p>
-
-<div class="author-section">
-
-<div class="author-photo">
-
-<img
-src="images/podcast.jpg"
-alt="Podcast MHD">
-
-</div>
-
-<div class="author-content">
-
-<h3>Em Breve</h3>
-
-
-<div class="podcast-preview">
-
-<div class="podcast-card">
-
-<img
-src="images/videos/poder-coracao.jpg"
-alt="O Poder de Guardar o Coração">
-
-<h4>
-O Poder de Guardar o Coração
-</h4>
-
-</div>
-
-<div class="podcast-card">
-
-<img
-src="images/videos/mapa-sucesso.jpg"
-alt="O Mapa de uma Vida de Sucesso">
-
-<h4>
-O Mapa de uma Vida de Sucesso
-</h4>
-
-</div>
-
-<div class="podcast-card">
-
-<img
-src="images/videos/proposito.jpg"
-alt="Propósito">
-
-<h4>
-Descobrindo o Propósito
-</h4>
-
-</div>
-
-</div>
-
-<br>
-
-<a href="podcast.html"
-class="btn primary">
-
-Ver Mais Podcasts
-
-</a>
-
-<a href="#"
-class="btn secondary">
-
-Canal YouTube
-
-</a>
-
-<a href="#"
-class="btn secondary">
-
-Spotify
-
-</a>
-
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="oracoes-preview">
-
-<div class="container">
-
-<section id="oracoes-preview">
-
-<div class="container">
-
-<h2>Orações MHD</h2>
-
-<p class="section-subtitle">
-
-Momentos de oração para fortalecer a fé,
-encontrar direção e experimentar a presença de Deus.
-
-</p>
-
-<div class="oracoes-banner">
-
-<img
-src="images/oracoes/oracoes-mhd.jpg"
-alt="Orações MHD">
-
-</div>
-
-<br>
-
-<a href="oracoes.html"
-class="btn primary">
-
-Entrar nas Orações
-
-</a>
-
-</div>
-
-</section>
-
-</div>
-
-</section>
 
 </p>
 
@@ -723,10 +584,10 @@ Livros, devocionais e recursos educativos.
 
 <div class="card">
 
-<h3>🎙 Podcast</h3>
+<h3>Biblioteca Gratuita</h3>
 
 <p>
-Reflexões e entrevistas transformadoras.
+Recursos gratuitos para fortalecer a fé e promover o crescimento espiritual.
 </p>
 
 </div>
@@ -848,8 +709,7 @@ Acredita que muitos jovens possuem capacidades extraordinárias, mas acabam por 
 
 <p>
 
-Através dos seus livros, estudos, reflexões, podcasts e projetos educativos, procura transmitir princípios práticos que ajudem a nova geração a crescer com sabedoria, conhecimento, caráter e propósito.
-
+Através dos seus livros, estudos, reflexões e projetos educativos, procura transmitir princípios práticos que ajudem a nova geração a crescer com sabedoria, conhecimento, caráter e propósito.
 </p>
 
 <a href="sobre-autor.html" class="btn primary">
@@ -858,11 +718,6 @@ Saber Mais
 
 </a>
 
-</div>
-
-</div>
-
-</div>
 
 </section>
 
@@ -900,7 +755,7 @@ Construindo propósitos.
 <li><a href="#sobre">Sobre</a></li>
 <li><a href="#livros">Livros</a></li>
 <li><a href="#biblioteca">Biblioteca</a></li>
-<li><a href="#podcast">Podcast</a></li>
+<!-- <li><a href="#podcast">Podcast</a></li> -->
 
 </ul>
 
@@ -969,7 +824,6 @@ menu.classList.toggle("active");
 });
 
 </script>
-```
 
 
 <script src="script.js"></script>
@@ -988,32 +842,37 @@ target="_blank">
 
 <script>
 
-const fraseDia =
-document.getElementById("fraseDiaTexto");
+function atualizarConteudo(){
 
 const hoje = new Date();
 
 const numeroDia =
 Math.floor(hoje.getTime() / 86400000);
 
+/* Pensamento */
+
 const indiceFrase =
 numeroDia % pensamentos.length;
 
-fraseDia.innerText =
+document.getElementById("fraseDiaTexto").innerText =
 pensamentos[indiceFrase].texto;
+
+/* Versículo */
 
 const versiculo =
 obterVersiculoDoDia();
 
-document.getElementById(
-"versiculoDiaTexto"
-).innerText =
+document.getElementById("versiculoDiaTexto").innerText =
 versiculo.texto;
 
-document.getElementById(
-"referenciaVersiculo"
-).innerText =
+document.getElementById("referenciaVersiculo").innerText =
 versiculo.referencia;
+
+}
+
+atualizarConteudo();
+
+/* Atualiza automaticamente caso mude a hora */
 
 
 </script>
@@ -1111,6 +970,20 @@ imagem:"images/books/mapa-sucesso-2.jpg",
 titulo:"O Mapa de uma Vida de Sucesso Vol.2",
 descricao:"As 7 Leis da Plenitude do Sucesso.",
 link:"mapa-sucesso-vol2.html"
+},
+
+{
+imagem:"images/books/casamento.jpg",
+titulo:"O Que é o Casamento? Volume 1",
+descricao:"Descubra as verdades que precisa de conhecer antes e durante a vida conjugal.",
+link:"casamento.html"
+},
+
+{
+imagem:"images/books/3-questoes-sabedoria.jpg",
+titulo:"3 Questões de Sabedoria",
+descricao:"Como discernir a vontade de Deus em todas as suas decisões.",
+link:"3-questoes-sabedoria.html"
 }
 
 ];
