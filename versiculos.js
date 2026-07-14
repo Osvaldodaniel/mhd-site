@@ -1847,9 +1847,8 @@ const hoje = new Date();
 const numeroDia =
 Math.floor(hoje.getTime() / 86400000);
 
-const indice =
-numeroDia % todosVersiculos.length;
-
-return todosVersiculos[indice];
+return todosVersiculos[
+numeroDia % todosVersiculos.length
+];
 
 }

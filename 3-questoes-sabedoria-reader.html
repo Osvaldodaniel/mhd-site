@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+3 Questões de Sabedoria
+</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+margin:0;
+padding:0;
+background:#f3f3f3;
+font-family:Arial,sans-serif;
+}
+
+.reader-header{
+
+height:70px;
+
+background:#5a189a;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:0 25px;
+
+color:white;
+
+font-weight:bold;
+
+}
+
+.reader-header a{
+
+color:white;
+
+text-decoration:none;
+
+}
+
+.reader-header a:hover{
+
+opacity:.85;
+
+}
+
+.copyright-notice{
+
+background:#fff3cd;
+
+padding:12px;
+
+text-align:center;
+
+font-size:14px;
+
+border-bottom:1px solid #ddd;
+
+}
+
+.book-viewer{
+
+width:96%;
+
+max-width:1500px;
+
+margin:20px auto;
+
+background:white;
+
+border-radius:15px;
+
+overflow:hidden;
+
+box-shadow:0 8px 30px rgba(0,0,0,.10);
+
+}
+
+.book-viewer iframe{
+
+width:100%;
+
+height:calc(100vh - 180px);
+
+border:none;
+
+background:white;
+
+}
+
+.reader-navigation{
+
+width:96%;
+
+max-width:1500px;
+
+margin:20px auto 40px;
+
+display:grid;
+
+grid-template-columns:1fr auto auto 1fr;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+.reader-navigation button{
+
+background:#5a189a;
+
+color:white;
+
+border:none;
+
+padding:12px 20px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+font-weight:bold;
+
+font-size:15px;
+
+}
+
+.reader-navigation button:hover{
+
+opacity:.9;
+
+}
+
+.reader-navigation button:last-child{
+
+justify-self:end;
+
+}
+
+#contador{
+
+font-size:18px;
+
+font-weight:bold;
+
+}
+
+.watermark{
+
+position:fixed;
+
+bottom:20px;
+
+right:20px;
+
+font-size:28px;
+
+font-weight:bold;
+
+opacity:.08;
+
+pointer-events:none;
+
+z-index:9999;
+
+}
+
+@media(max-width:768px){
+
+.reader-header{
+
+padding:0 10px;
+
+font-size:13px;
+
+}
+
+.book-viewer iframe{
+
+height:75vh;
+
+}
+
+.reader-navigation{
+
+grid-template-columns:1fr;
+
+}
+
+.reader-navigation button{
+
+width:100%;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="reader-header">
+
+<a href="3-questoes-sabedoria.html">
+
+← Voltar ao Livro
+
+</a>
+
+<div>
+
+3 Questões de Sabedoria
+
+</div>
+
+<a href="index.html">
+
+Início
+
+</a>
+
+</div>
+
+<div class="copyright-notice">
+
+Esta obra está protegida por direitos de autor.
+A leitura online é gratuita.
+É proibida a reprodução, distribuição ou comercialização sem autorização do autor.
+
+</div>
+
+<div class="book-viewer">
+
+<iframe
+
+id="bookFrame"
+
+src="livros/3-questoes-sabedoria/titlepage.xhtml">
+
+</iframe>
+
+</div>
+
+<div class="reader-navigation">
+
+<button onclick="paginaAnterior()">
+
+← Página Anterior
+
+</button>
+
+<span id="contador">
+
+1 / 1
+
+</span>
+
+<button onclick="reiniciarLeitura()">
+
+Recomeçar
+
+</button>
+
+<button onclick="proximaPagina()">
+
+Próxima Página →
+
+</button>
+
+</div>
+
+<div class="watermark">
+
+© Osvaldo MUTUQUE
+
+</div>
+
+<script>
+
+/* PROTEÇÃO */
+
+document.addEventListener("contextmenu",e=>e.preventDefault());
+
+document.addEventListener("keydown",function(e){
+
+if(
+e.ctrlKey &&
+(
+e.key==="s" ||
+e.key==="p" ||
+e.key==="u"
+)
+){
+e.preventDefault();
+}
+
+});
+
+/* PÁGINAS */
+
+const paginas=[
+
+"titlepage.xhtml"
+
+/*
+Adicionar aqui:
+
+index_split_000.html
+index_split_001.html
+...
+*/
+
+];
+
+/* MEMÓRIA */
+
+let paginaAtual=
+
+parseInt(
+
+localStorage.getItem("questoesSabedoriaPagina")
+
+)||0;
+
+/* CARREGAR */
+
+function carregarPagina(){
+
+document.getElementById("bookFrame").src=
+
+"livros/3-questoes-sabedoria/"+paginas[paginaAtual];
+
+document.getElementById("contador").innerHTML=
+
+(paginaAtual+1)+" / "+paginas.length;
+
+localStorage.setItem(
+
+"questoesSabedoriaPagina",
+
+paginaAtual
+
+);
+
+}
+
+/* PRÓXIMA */
+
+function proximaPagina(){
+
+if(paginaAtual<paginas.length-1){
+
+paginaAtual++;
+
+carregarPagina();
+
+}
+
+}
+
+/* ANTERIOR */
+
+function paginaAnterior(){
+
+if(paginaAtual>0){
+
+paginaAtual--;
+
+carregarPagina();
+
+}
+
+}
+
+/* RECOMEÇAR */
+
+function reiniciarLeitura(){
+
+if(confirm("Deseja reiniciar a leitura deste livro?")){
+
+paginaAtual=0;
+
+localStorage.removeItem(
+
+"questoesSabedoriaPagina"
+
+);
+
+carregarPagina();
+
+}
+
+}
+
+carregarPagina();
+
+</script>
+
+</body>
+
+</html>
