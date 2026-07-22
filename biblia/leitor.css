@@ -1,0 +1,2151 @@
+/*=====================================================
+                LEITOR BÍBLICO MHD
+                PARTE 1A
+=====================================================*/
+
+
+/*=====================================================
+VARIÁVEIS
+=====================================================*/
+
+:root{
+
+    --primary:#5A189A;
+    --primary-dark:#4A148C;
+    --primary-light:#7B2CBF;
+
+    --gold:#D4A017;
+    --gold-light:#E7BE42;
+
+    --background:#F8F6FC;
+
+    --card:#FFFFFF;
+
+    --text:#333333;
+
+    --text-light:#666666;
+
+    --border:#ECE7F5;
+
+    --shadow:0 12px 35px rgba(90,24,154,.08);
+
+    --shadow-hover:0 20px 45px rgba(90,24,154,.15);
+
+    --radius:18px;
+
+    --transition:.35s ease;
+
+}
+
+
+/*=====================================================
+RESET
+=====================================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Montserrat',sans-serif;
+
+    background:var(--background);
+
+    color:var(--text);
+
+    line-height:1.8;
+
+    overflow-x:hidden;
+
+}
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+button{
+
+    font-family:inherit;
+
+    cursor:pointer;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+/*=====================================================
+READER
+=====================================================*/
+
+.reader{
+
+    width:min(1250px,95%);
+
+    margin:auto;
+
+    padding:35px 0 80px;
+
+}
+
+
+/*=====================================================
+TOPBAR
+=====================================================*/
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.back{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:12px 22px;
+
+    border-radius:999px;
+
+    background:white;
+
+    color:var(--primary);
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+    font-weight:600;
+
+}
+
+.back:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.logo i{
+
+    color:var(--gold);
+
+    font-size:2rem;
+
+}
+
+.logo h2{
+
+    font-family:'Playfair Display',serif;
+
+    color:var(--primary-dark);
+
+}
+
+
+/*=====================================================
+BREADCRUMB
+=====================================================*/
+
+.breadcrumb{
+
+    display:flex;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-bottom:30px;
+
+    font-size:.95rem;
+
+    color:var(--text-light);
+
+}
+
+.breadcrumb a{
+
+    color:var(--primary);
+
+    transition:var(--transition);
+
+}
+
+.breadcrumb a:hover{
+
+    color:var(--gold);
+
+}
+
+.breadcrumb i{
+
+    font-size:.75rem;
+
+    color:#999;
+
+}
+
+.breadcrumb span{
+
+    font-weight:600;
+
+}
+
+
+/*=====================================================
+RESPONSIVO
+=====================================================*/
+
+@media(max-width:768px){
+
+    .topbar{
+
+        flex-direction:column;
+
+        gap:20px;
+
+        text-align:center;
+
+    }
+
+    .reader{
+
+        width:94%;
+
+    }
+
+}
+
+/*=====================================================
+CABEÇALHO DO LIVRO
+=====================================================*/
+
+.book-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:30px;
+
+    margin-bottom:30px;
+
+    padding:35px;
+
+    background:var(--card);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+}
+
+.book-info{
+
+    flex:1;
+
+}
+
+.book-info h1{
+
+    font-family:'Playfair Display',serif;
+
+    color:var(--primary-dark);
+
+    font-size:2.6rem;
+
+    margin-bottom:12px;
+
+}
+
+.book-info p{
+
+    color:var(--text-light);
+
+    margin-bottom:18px;
+
+}
+
+.chapterInfo{
+
+    display:flex;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    color:var(--gold);
+
+    font-weight:600;
+
+    font-size:.95rem;
+
+}
+
+/*=====================================================
+SELETOR DE CAPÍTULO
+=====================================================*/
+
+.chapter-selector{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.chapter-selector button{
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:1rem;
+
+    transition:var(--transition);
+
+}
+
+.chapter-selector button:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-2px);
+
+}
+
+#chapterTitle{
+
+    min-width:140px;
+
+    text-align:center;
+
+    font-weight:700;
+
+    color:var(--primary-dark);
+
+    font-size:1.05rem;
+
+}
+
+/*=====================================================
+BARRA DE PROGRESSO
+=====================================================*/
+
+.readingProgress{
+
+    width:100%;
+
+    height:6px;
+
+    margin-bottom:30px;
+
+    overflow:hidden;
+
+    border-radius:999px;
+
+    background:#E8E1F4;
+
+}
+
+#readingBar{
+
+    width:0%;
+
+    height:100%;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+
+        90deg,
+
+        var(--gold),
+
+        var(--primary)
+
+    );
+
+    transition:width .2s linear;
+
+}
+
+/*=====================================================
+TOOLBAR
+=====================================================*/
+
+.toolbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+    margin-bottom:30px;
+
+    padding:20px 25px;
+
+    background:var(--card);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+}
+
+.toolbar-left,
+
+.toolbar-center,
+
+.toolbar-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+}
+
+/*=====================================================
+BOTÕES
+=====================================================*/
+
+.toolbar button{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:12px 18px;
+
+    background:#F5F1FC;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.toolbar button:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+    transform:translateY(-2px);
+
+}
+
+.toolbar button i{
+
+    font-size:1rem;
+
+}
+
+/*=====================================================
+SELETOR DA TRADUÇÃO
+=====================================================*/
+
+#translationSelector{
+
+    min-width:180px;
+
+    padding:12px 18px;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    background:white;
+
+    color:var(--text);
+
+    font-size:.95rem;
+
+    transition:var(--transition);
+
+}
+
+#translationSelector:hover{
+
+    border-color:var(--primary);
+
+}
+
+#translationSelector:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 3px rgba(90,24,154,.15);
+
+}
+
+/*=====================================================
+RESPONSIVO
+=====================================================*/
+
+@media(max-width:992px){
+
+    .book-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+    .chapter-selector{
+
+        width:100%;
+
+        justify-content:space-between;
+
+    }
+
+    .toolbar{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .toolbar-left,
+
+    .toolbar-center,
+
+    .toolbar-right{
+
+        justify-content:center;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .book-info h1{
+
+        font-size:2rem;
+
+    }
+
+    .toolbar button{
+
+        flex:1;
+
+    }
+
+    #translationSelector{
+
+        width:100%;
+
+    }
+
+}
+
+@media(max-width:500px){
+
+    .chapter-selector{
+
+        gap:10px;
+
+    }
+
+    #chapterTitle{
+
+        min-width:auto;
+
+        font-size:.95rem;
+
+    }
+
+    .toolbar-left,
+
+    .toolbar-right{
+
+        display:grid;
+
+        grid-template-columns:repeat(2,1fr);
+
+        width:100%;
+
+    }
+
+}
+
+/*=====================================================
+PESQUISA NO CAPÍTULO
+=====================================================*/
+
+.chapter-search{
+
+    margin-bottom:30px;
+
+}
+
+.search-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    background:var(--card);
+
+    padding:15px 22px;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+}
+
+.search-box i{
+
+    color:var(--primary);
+
+    font-size:1rem;
+
+}
+
+.search-box input{
+
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    font-size:1rem;
+
+    color:var(--text);
+
+}
+
+.search-box input::placeholder{
+
+    color:#999;
+
+}
+
+
+/*=====================================================
+LOADER
+=====================================================*/
+
+.loader{
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:20px;
+
+    margin-bottom:25px;
+
+    border-radius:var(--radius);
+
+    background:var(--card);
+
+    box-shadow:var(--shadow);
+
+    color:var(--primary);
+
+    font-weight:600;
+
+}
+
+.loader.active{
+
+    display:flex;
+
+}
+
+
+/*=====================================================
+MENSAGEM DE ERRO
+=====================================================*/
+
+.api-error{
+
+    display:none;
+
+    margin-bottom:25px;
+
+    padding:18px 22px;
+
+    border-left:5px solid #d32f2f;
+
+    background:#fdeaea;
+
+    color:#b71c1c;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+}
+
+.api-error.active{
+
+    display:block;
+
+}
+
+
+/*=====================================================
+LEITOR DE ÁUDIO
+=====================================================*/
+
+.audioPlayer{
+
+    margin-bottom:35px;
+
+    padding:25px;
+
+    border-radius:var(--radius);
+
+    background:var(--card);
+
+    box-shadow:var(--shadow);
+
+}
+
+.audioTop{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+    font-weight:600;
+
+    color:var(--primary);
+
+}
+
+.audioTop div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+#audio{
+
+    width:100%;
+
+}
+
+
+/*=====================================================
+CONTEÚDO
+=====================================================*/
+
+.content{
+
+    background:var(--card);
+
+    padding:45px;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    margin-bottom:40px;
+
+}
+
+
+/*=====================================================
+VERSÍCULOS
+=====================================================*/
+
+.verse{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    margin-bottom:28px;
+
+    padding:18px;
+
+    border-radius:14px;
+
+    transition:var(--transition);
+
+}
+
+.verse:hover{
+
+    background:#F7F2FD;
+
+}
+
+.verse-number{
+
+    min-width:34px;
+
+    text-align:center;
+
+    font-weight:700;
+
+    color:var(--gold);
+
+    font-size:.95rem;
+
+    user-select:none;
+
+}
+
+.verse-text{
+
+    flex:1;
+
+    color:var(--text);
+
+    font-size:1.08rem;
+
+    line-height:2;
+
+}
+
+
+/*=====================================================
+VERSÍCULO SELECIONADO
+=====================================================*/
+
+.verse.selected{
+
+    background:#F2EAFE;
+
+    border-left:5px solid var(--primary);
+
+}
+
+
+/*=====================================================
+VERSÍCULO FAVORITO
+=====================================================*/
+
+.verse.favorite{
+
+    border-left:5px solid var(--gold);
+
+}
+
+
+/*=====================================================
+VERSÍCULO DESTACADO
+=====================================================*/
+
+.highlight{
+
+    background:#FFF4B8;
+
+    padding:2px 4px;
+
+    border-radius:4px;
+
+}
+
+
+/*=====================================================
+AÇÕES DO VERSÍCULO
+=====================================================*/
+
+.verse-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    opacity:0;
+
+    transition:var(--transition);
+
+}
+
+.verse:hover .verse-actions{
+
+    opacity:1;
+
+}
+
+.verse-actions button{
+
+    width:34px;
+
+    height:34px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#F3EEFC;
+
+    color:var(--primary);
+
+    transition:var(--transition);
+
+}
+
+.verse-actions button:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+
+/*=====================================================
+SELEÇÃO DE TEXTO
+=====================================================*/
+
+::selection{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+
+/*=====================================================
+RESPONSIVO
+=====================================================*/
+
+@media(max-width:768px){
+
+    .content{
+
+        padding:28px;
+
+    }
+
+    .verse{
+
+        gap:12px;
+
+    }
+
+    .verse-text{
+
+        font-size:1rem;
+
+        line-height:1.8;
+
+    }
+
+    .audioTop{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:10px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .content{
+
+        padding:22px;
+
+    }
+
+    .verse{
+
+        padding:14px;
+
+    }
+
+    .verse-number{
+
+        min-width:26px;
+
+        font-size:.85rem;
+
+    }
+
+}
+
+/*=====================================================
+NAVEGAÇÃO INFERIOR
+=====================================================*/
+
+.bottomNavigation{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:15px;
+
+    margin:40px 0;
+
+}
+
+.navButton{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:16px 20px;
+
+    border:none;
+
+    border-radius:var(--radius);
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-weight:600;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.navButton:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-3px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+
+/*=====================================================
+BOTÃO VOLTAR AO TOPO
+=====================================================*/
+
+.scrollTop{
+
+    position:fixed;
+
+    right:30px;
+
+    bottom:30px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--gold);
+
+    color:#fff;
+
+    font-size:1.2rem;
+
+    box-shadow:var(--shadow);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:var(--transition);
+
+    z-index:999;
+
+}
+
+.scrollTop.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.scrollTop:hover{
+
+    transform:translateY(-4px);
+
+    background:var(--primary);
+
+}
+
+
+/*=====================================================
+MODAIS
+=====================================================*/
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.55);
+
+    padding:20px;
+
+    z-index:2000;
+
+}
+
+.modal.active{
+
+    display:flex;
+
+}
+
+.modal-content{
+
+    width:min(650px,100%);
+
+    background:#fff;
+
+    border-radius:var(--radius);
+
+    box-shadow:0 25px 60px rgba(0,0,0,.25);
+
+    overflow:hidden;
+
+    animation:fadeUp .35s ease;
+
+}
+
+.modal-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 25px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+.modal-header h3{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:1.2rem;
+
+}
+
+.closeModal{
+
+    border:none;
+
+    background:none;
+
+    color:#fff;
+
+    font-size:1.3rem;
+
+}
+
+#noteText{
+
+    width:100%;
+
+    min-height:220px;
+
+    resize:vertical;
+
+    border:none;
+
+    outline:none;
+
+    padding:25px;
+
+    font-size:1rem;
+
+    line-height:1.8;
+
+    font-family:inherit;
+
+}
+
+.modal-footer{
+
+    padding:20px 25px;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    border-top:1px solid var(--border);
+
+}
+
+.primaryButton{
+
+    border:none;
+
+    padding:12px 28px;
+
+    border-radius:12px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.primaryButton:hover{
+
+    background:var(--primary-dark);
+
+}
+
+
+/*=====================================================
+PARTILHA
+=====================================================*/
+
+.shareButtons{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+
+    padding:25px;
+
+}
+
+.shareButtons button{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#F6F2FD;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.shareButtons button:hover{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+
+/*=====================================================
+TOAST
+=====================================================*/
+
+.toast{
+
+    position:fixed;
+
+    left:50%;
+
+    bottom:30px;
+
+    transform:translateX(-50%) translateY(120px);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:16px 24px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    border-radius:999px;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+    z-index:2500;
+
+}
+
+.toast.show{
+
+    transform:translateX(-50%) translateY(0);
+
+}
+
+
+/*=====================================================
+MODO ESCURO
+=====================================================*/
+
+body.dark{
+
+    --background:#121212;
+
+    --card:#1E1E1E;
+
+    --text:#EEEEEE;
+
+    --text-light:#CCCCCC;
+
+    --border:#333333;
+
+    --shadow:0 12px 30px rgba(0,0,0,.45);
+
+    --shadow-hover:0 20px 45px rgba(0,0,0,.55);
+
+}
+
+body.dark .search-box input{
+
+    color:#fff;
+
+}
+
+body.dark .modal-content{
+
+    background:#1E1E1E;
+
+}
+
+body.dark #noteText{
+
+    background:#1E1E1E;
+
+    color:#fff;
+
+}
+
+
+/*=====================================================
+ANIMAÇÕES
+=====================================================*/
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+
+/*=====================================================
+UTILITÁRIOS
+=====================================================*/
+
+.hidden{
+
+    display:none !important;
+
+}
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.mt-20{
+
+    margin-top:20px;
+
+}
+
+.mb-20{
+
+    margin-bottom:20px;
+
+}
+
+
+/*=====================================================
+RESPONSIVO
+=====================================================*/
+
+@media(max-width:992px){
+
+    .bottomNavigation{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .shareButtons{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .modal-content{
+
+        width:100%;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .bottomNavigation{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .navButton{
+
+        width:100%;
+
+    }
+
+    .toast{
+
+        width:92%;
+
+        border-radius:18px;
+
+        justify-content:center;
+
+        text-align:center;
+
+    }
+
+    .scrollTop{
+
+        right:18px;
+
+        bottom:18px;
+
+    }
+
+}
+
+/* Versículos Bíblia MHD */
+
+.verse {
+
+    display: flex;
+
+    gap: 25px;
+
+    align-items: flex-start;
+
+    margin-bottom: 30px;
+
+}
+
+
+.verseNumber {
+
+    width: 80px;
+
+    flex-shrink: 0;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #5b21b6;
+
+    line-height: 1.8;
+
+}
+
+
+.verseText {
+
+    flex: 1;
+
+    margin: 0;
+
+    font-size: 18px;
+
+    line-height: 2;
+
+    color: #333;
+
+    text-align: justify;
+
+}
+
+/*=====================================
+   BÍBLIA MHD
+   ESTILO DOS VERSÍCULOS
+=====================================*/
+
+
+.verse{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:25px;
+
+    margin-bottom:32px;
+
+    padding:5px 15px;
+
+    line-height:1.8;
+
+}
+
+
+/* Número do versículo */
+
+.verseNumber{
+
+    min-width:70px;
+
+    color:#5b21b6;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    text-align:right;
+
+}
+
+
+/* Texto bíblico */
+
+.verse p{
+
+    margin:0;
+
+    flex:1;
+
+    color:#222;
+
+    font-size:16px;
+
+    line-height:1.9;
+
+    text-align:justify;
+
+}
+
+
+/* Caixa principal dos versículos */
+
+.reader-content{
+
+    padding:45px 50px;
+
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+
+    .reader-content{
+
+        padding:25px 20px;
+
+    }
+
+
+    .verse{
+
+        gap:10px;
+
+        margin-bottom:25px;
+
+    }
+
+
+    .verseNumber{
+
+        min-width:45px;
+
+        font-size:11px;
+
+    }
+
+
+    .verse p{
+
+        font-size:15px;
+
+        line-height:1.7;
+
+    }
+
+
+}
+
+
+/*=====================================================
+   BÍBLIA MHD - MODO ESCURO
+======================================================*/
+
+
+body.dark-reader{
+
+    background:#121212;
+
+    color:#e5e5e5;
+
+}
+
+
+
+/* Cabeçalho */
+
+body.dark-reader .reader-header{
+
+    background:#1e1e1e;
+
+    color:#ffffff;
+
+}
+
+
+
+/* Área dos versículos */
+
+body.dark-reader #bibleContent{
+
+    background:#121212;
+
+}
+
+
+
+/* Texto dos versículos */
+
+body.dark-reader .verseText{
+
+    color:#e5e5e5;
+
+}
+
+
+
+/* Número do versículo */
+
+body.dark-reader .verseNumber{
+
+    color:#c084fc;
+
+}
+
+
+
+/* Cartões */
+
+body.dark-reader .reader-card{
+
+    background:#1e1e1e;
+
+    border-color:#333;
+
+}
+
+
+
+/* Botões */
+
+body.dark-reader button{
+
+    background:#2a2a2a;
+
+    color:#ffffff;
+
+}
+
+
+
+/* Links */
+
+body.dark-reader a{
+
+    color:#d8b4fe;
+
+}
+
+/* =====================================
+NAVEGAÇÃO ENTRE CAPÍTULOS
+===================================== */
+
+
+.bottomNavigation {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 25px 0 40px;
+
+}
+
+
+
+.bottomNavigation button {
+
+
+    flex: 1;
+
+
+    border: none;
+
+
+    background: linear-gradient(
+        135deg,
+        #6d28d9,
+        #4c1d95
+    );
+
+
+    color: white;
+
+
+    padding: 14px 25px;
+
+
+    border-radius: 14px;
+
+
+    font-size: 15px;
+
+
+    font-weight: 600;
+
+
+    cursor: pointer;
+
+
+    transition: 0.3s;
+
+
+    box-shadow: 0 8px 20px rgba(109,40,217,0.25);
+
+
+}
+
+
+
+.bottomNavigation button:hover {
+
+
+    transform: translateY(-2px);
+
+
+    opacity: 0.9;
+
+
+}
+
+
+
+.bottomNavigation button i {
+
+
+    margin: 0 8px;
+
+}
+
+/* ==================================================
+FOOTER MHD
+================================================== */
+
+
+.mhd-footer {
+
+    background: #6D28D9;
+
+    color: #ffffff;
+
+    margin-top: 60px;
+
+    padding: 50px 20px 25px;
+
+}
+
+
+
+.mhd-footer .container {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+}
+
+
+
+
+
+/* BLOCO DE APOIO */
+
+.footer-cta {
+
+    text-align: center;
+
+    max-width: 850px;
+
+    margin: auto;
+
+}
+
+
+
+.footer-cta h2 {
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+.footer-cta p {
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: rgba(255,255,255,0.9);
+
+}
+
+
+
+
+
+/* BOTÃO APOIAR */
+
+.footer-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 25px;
+
+    padding: 14px 30px;
+
+    border-radius: 30px;
+
+    background: #F5B301;
+
+    color: #6D28D9;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+
+}
+
+
+
+.footer-btn:hover {
+
+    transform: translateY(-3px);
+
+    opacity: 0.9;
+
+}
+
+
+
+
+
+/* LINKS DO FOOTER */
+
+.footer-links {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 35px;
+
+    margin-top: 45px;
+
+    flex-wrap: wrap;
+
+}
+
+
+
+.footer-links a {
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+}
+
+
+
+.footer-links a:hover {
+
+    opacity: 0.8;
+
+}
+
+
+
+.footer-links i {
+
+    color: #F5B301;
+
+    margin-right: 8px;
+
+}
+
+
+
+
+
+/* PARTE INFERIOR */
+
+.footer-bottom {
+
+    margin-top: 35px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255,255,255,0.25);
+
+    text-align: center;
+
+    font-size: 14px;
+
+    color: rgba(255,255,255,0.85);
+
+}
+
+
+
+
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+
+    .footer-cta h2 {
+
+        font-size: 22px;
+
+    }
+
+
+
+    .footer-cta p {
+
+        font-size: 14px;
+
+    }
+
+
+
+    .footer-links {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+    }
+
+
+}

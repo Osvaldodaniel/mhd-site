@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Bíblia MHD | Leitor</title>
+
+
+<link rel="stylesheet" href="leitor.css">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+rel="stylesheet">
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+</head>
+
+
+<body>
+
+
+<div class="reader">
+
+
+
+<!-- =====================================
+HEADER
+===================================== -->
+
+
+<header class="topbar">
+
+
+<a href="biblia.html" class="back">
+
+<i class="fas fa-arrow-left"></i>
+
+<span>Voltar</span>
+
+</a>
+
+
+
+<div class="logo">
+
+
+<i class="fas fa-book-bible"></i>
+
+
+<h2>Bíblia MHD</h2>
+
+
+</div>
+
+
+
+</header>
+
+
+
+
+
+<!-- =====================================
+INFORMAÇÃO DO LIVRO
+===================================== -->
+
+
+<section class="book-header">
+
+
+<div>
+
+
+<h1 id="bookName">
+
+A carregar...
+
+</h1>
+
+
+
+<p id="bookVersion">
+
+Nova Versão Transformadora
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="chapter-selector">
+
+
+<button id="prevChapter">
+
+<i class="fas fa-chevron-left"></i>
+
+</button>
+
+
+
+<span id="chapterNumber">
+
+Capítulo
+
+</span>
+
+
+
+<button id="nextChapter">
+
+<i class="fas fa-chevron-right"></i>
+
+</button>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+<!-- =====================================
+FERRAMENTAS
+===================================== -->
+
+
+<section class="toolbar">
+
+
+<button id="playAudio">
+
+    <i class="fas fa-play"></i>
+
+    Ouvir
+
+</button>
+
+
+<button id="pauseAudio">
+
+    <i class="fas fa-pause"></i>
+
+    Pausar
+
+</button>
+
+
+<button id="stopAudio">
+
+    <i class="fas fa-stop"></i>
+
+    Parar
+
+</button>
+
+
+
+<button id="searchVerse">
+
+<i class="fas fa-search"></i>
+
+</button>
+
+
+
+<button id="favorite">
+
+<i class="fas fa-heart"></i>
+
+</button>
+
+
+
+<button id="note">
+
+<i class="fas fa-pen"></i>
+
+</button>
+
+
+
+<button id="share">
+
+<i class="fas fa-share-alt"></i>
+
+</button>
+
+
+
+<button id="decreaseFont">
+
+A-
+
+</button>
+
+
+
+<button id="increaseFont">
+
+A+
+
+</button>
+
+
+
+<button id="darkMode">
+
+<i class="fas fa-moon"></i>
+
+</button>
+
+
+
+</section>
+
+<!-- =====================================
+PLAYER DE ÁUDIO
+===================================== -->
+
+
+<section class="audioPlayer">
+
+
+<div class="audioTop">
+
+
+<span>
+
+<i class="fas fa-headphones"></i>
+
+Leitura em áudio
+
+</span>
+
+
+
+<span id="audioSpeed">
+
+1x
+
+</span>
+
+
+
+</div>
+
+
+
+<audio
+
+id="audio"
+
+controls>
+
+
+</audio>
+
+
+
+</section>
+
+
+
+
+
+<!-- =====================================
+CONTEÚDO BÍBLICO
+===================================== -->
+
+
+<main
+
+id="bibleContent"
+
+class="content">
+
+
+<div class="loading-reader">
+
+
+<i class="fas fa-spinner fa-spin"></i>
+
+
+<p>
+
+A carregar a Palavra de Deus...
+
+</p>
+
+
+</div>
+
+
+</main>
+
+
+
+
+
+<!-- =====================================
+NAVEGAÇÃO
+===================================== -->
+
+
+<footer class="bottomNavigation">
+
+
+
+<button
+
+id="previousChapter">
+
+
+<i class="fas fa-angle-left"></i>
+
+
+Capítulo anterior
+
+
+</button>
+
+
+
+
+
+<button
+
+id="nextChapter">
+
+
+Próximo capítulo
+
+
+<i class="fas fa-angle-right"></i>
+
+
+</button>
+
+
+
+</footer>
+
+
+
+</div>
+
+<!-- =====================================
+SCRIPTS
+===================================== -->
+
+
+<script src="config.js"></script>
+
+<script src="api.js"></script>
+
+<script src="leitor.js"></script>
+
+
+
+</body>
+
+</html>
+
+<!-- ==================================================
+FOOTER MHD
+================================================== -->
+
+<footer class="mhd-footer">
+
+
+    <div class="container">
+
+
+        <div class="footer-cta">
+
+
+            <h2>
+                Ajude-nos a continuar esta missão
+            </h2>
+
+
+
+            <p>
+
+                O MHD – Minha História Será Diferente
+                dedica-se à criação de livros, recursos
+                gratuitos e conteúdos inspiradores que
+                fortalecem a fé, promovem o crescimento
+                espiritual e transformam vidas.
+
+                <br><br>
+
+                Se esta missão tem sido uma bênção para si,
+                considere apoiar este projeto.
+
+            </p>
+
+
+
+            <a
+            href="../apoiar.html"
+            class="footer-btn">
+
+
+                <i class="fas fa-heart"></i>
+
+                Apoiar esta Missão
+
+
+            </a>
+
+
+        </div>
+
+
+
+
+
+        <div class="footer-links">
+
+
+            <a href="../index.html">
+
+                <i class="fas fa-home"></i>
+
+                Início
+
+            </a>
+
+
+
+            <a href="../livros.html">
+
+                <i class="fas fa-book"></i>
+
+                Livros
+
+            </a>
+
+
+
+            <a href="../contacto.html">
+
+                <i class="fas fa-envelope"></i>
+
+                Contacto
+
+            </a>
+
+
+        </div>
+
+
+
+
+
+        <div class="footer-bottom">
+
+
+            <p>
+
+                © 2026 MHD – Minha História Será Diferente.
+
+            </p>
+
+
+            <p>
+
+                Todos os direitos reservados.
+
+            </p>
+
+
+        </div>
+
+
+
+    </div>
+
+
+</footer>
+
+
+
+
+
+<!-- ==================================================
+SCRIPTS DO LEITOR
+================================================== -->
+
+
+<script src="config.js"></script>
+
+<script src="api.js"></script>
+
+<script src="leitor.js"></script>

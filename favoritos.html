@@ -11,24 +11,36 @@ content="width=device-width, initial-scale=1.0">
 
 <title>Meus Favoritos | MHD</title>
 
+
 <link rel="stylesheet"
 href="style.css">
 
+
 </head>
 
+
 <body>
+
 
 <header>
 
 <div class="container">
 
-<h1>⭐ Meus Favoritos</h1>
+
+<h1>
+
+⭐ Meus Favoritos
+
+</h1>
+
 
 <p>
 
 Todos os conteúdos guardados durante a sua jornada.
 
 </p>
+
+
 
 <a href="index.html"
 class="btn primary">
@@ -37,15 +49,24 @@ class="btn primary">
 
 </a>
 
+
 </div>
 
 </header>
 
+
+
+
+
 <section class="pensamentos-section">
+
 
 <div class="container">
 
+
+
 <div class="favoritos-info">
+
 
 <h3 id="contadorFavoritos">
 
@@ -53,199 +74,440 @@ Total de Favoritos: 0
 
 </h3>
 
+
+
 <input
+
 type="text"
+
 id="pesquisaFavoritos"
-placeholder="🔍 Procurar favorito...">
+
+placeholder="🔍 Procurar favorito..."
+
+>
+
+
 
 <select id="filtroFavoritos">
 
+
 <option value="Todos">
+
 ⭐ Todos
+
 </option>
+
 
 <option value="pensamento">
+
 💭 Pensamentos
+
 </option>
+
 
 <option value="versiculo">
+
 📖 Versículos
+
 </option>
+
 
 <option value="oracao">
+
 🙏 Orações
+
 </option>
+
 
 <option value="podcast">
+
 🎙 Podcasts
+
 </option>
+
 
 <option value="livro">
+
 📚 Livros
+
 </option>
 
+
 <option value="estudo">
+
 📄 Estudos Bíblicos
+
 </option>
+
 
 </select>
 
+
 </div>
+
+
+
+
 
 <div id="listaFavoritos"></div>
 
+
+
 </div>
+
 
 </section>
 
+
+
+
+
 <script>
 
+
 const lista =
+
 document.getElementById(
 "listaFavoritos"
 );
 
+
+
 const pesquisa =
+
 document.getElementById(
 "pesquisaFavoritos"
 );
 
+
+
 const filtro =
+
 document.getElementById(
 "filtroFavoritos"
 );
 
+
+
+
+
+/*=====================================================
+CARREGAR FAVORITOS
+======================================================*/
+
+
 function carregarFavoritos(){
 
-return JSON.parse(
+
+
+let favoritosGerais = JSON.parse(
+
 localStorage.getItem(
 "favoritos"
 )
+
 ) || [];
 
+
+
+
+
+let favoritosBiblia = JSON.parse(
+
+localStorage.getItem(
+"mhd_favorites"
+)
+
+) || [];
+
+
+
+
+
+favoritosBiblia = favoritosBiblia.map(item=>{
+
+
+return {
+
+
+id:
+
+item.book + "." + item.chapter,
+
+
+
+tipo:
+
+"versiculo",
+
+
+
+titulo:
+
+"📖 Bíblia MHD",
+
+
+
+conteudo:
+
+"Capítulo guardado na Bíblia MHD",
+
+
+
+referencia:
+
+item.book + " - " + item.chapter,
+
+
+
+link:
+
+"leitor.html?bible=" +
+
+item.bible +
+
+"&book=" +
+
+item.book +
+
+"&chapter=" +
+
+item.chapter
+
+
+
+};
+
+
+
+});
+
+
+
+
+
+return [
+
+...favoritosGerais,
+
+...favoritosBiblia
+
+];
+
+
 }
+
+
+
+
+
+
+/*=====================================================
+ÍCONES
+======================================================*/
+
 
 function obterIcone(tipo){
 
+
 switch(tipo){
 
+
 case "pensamento":
+
 return "💭";
 
+
+
 case "versiculo":
+
 return "📖";
 
+
+
 case "oracao":
+
 return "🙏";
 
+
+
 case "podcast":
+
 return "🎙";
 
+
+
 case "livro":
+
 return "📚";
 
+
+
 case "estudo":
+
 return "📄";
 
+
+
 default:
+
 return "⭐";
 
-}
 
 }
+
+
+}
+
+
+
+
+
+
+/*=====================================================
+MOSTRAR FAVORITOS
+======================================================*/
+
 
 function mostrarFavoritos(){
 
+
+
 let favoritos =
+
 carregarFavoritos();
 
+
+
+
+
 const textoPesquisa =
+
 pesquisa.value.toLowerCase();
 
+
+
+
+
 const categoria =
+
 filtro.value;
+
+
+
+
 
 if(categoria !== "Todos"){
 
-favoritos =
-favoritos.filter(item =>
+
+favoritos = favoritos.filter(item=>
+
 
 item.tipo &&
+
 item.tipo.toLowerCase() ===
+
 categoria.toLowerCase()
+
 
 );
 
+
 }
+
+
+
+
+
 
 if(textoPesquisa){
 
-favoritos =
-favoritos.filter(item =>
+
+favoritos = favoritos.filter(item=>
+
 
 (item.titulo || "")
+
 .toLowerCase()
+
 .includes(textoPesquisa)
+
+
 
 ||
 
+
+
 (item.conteudo || "")
+
 .toLowerCase()
+
 .includes(textoPesquisa)
+
+
+
+||
+
+
+
+(item.referencia || "")
+
+.toLowerCase()
+
+.includes(textoPesquisa)
+
+
 
 );
 
+
 }
 
+
+
+
+
+
 document.getElementById(
+
 "contadorFavoritos"
+
 ).textContent =
+
 
 `Total de Favoritos: ${favoritos.length}`;
 
-lista.innerHTML = "";
 
-if(favoritos.length === 0){
 
-lista.innerHTML = `
+
+
+lista.innerHTML="";
+
+
+
+
+
+if(favoritos.length===0){
+
+
+lista.innerHTML=`
 
 <div class="quote-card">
+
 
 <h3>
+
 Nenhum favorito encontrado
+
 </h3>
 
+
 <p>
-Não existem conteúdos para mostrar.
+
+Ainda não existem conteúdos guardados.
+
 </p>
 
-</div>
-
-`;
-
-return;
-
-}
-
-favoritos.forEach(item => {
-
-if(typeof item === "string"){
-
-lista.innerHTML += `
-
-<div class="quote-card">
-
-<h3>⭐ Favorito</h3>
-
-<p>${item}</p>
-
-<button
-class="btn secondary"
-onclick="removerFavoritoAntigo('${item}')">
-
-🗑 Remover
-
-</button>
 
 </div>
 
@@ -253,11 +515,25 @@ onclick="removerFavoritoAntigo('${item}')">
 
 return;
 
+
 }
+
+
+
+
+
+
+
+favoritos.forEach(item=>{
+
 
 lista.innerHTML += `
 
+
+
 <div class="quote-card">
+
+
 
 <h3>
 
@@ -265,110 +541,254 @@ ${obterIcone(item.tipo)}
 
 ${item.titulo || "Sem título"}
 
-<br>
-
-TIPO: ${item.tipo}
-
 </h3>
 
-${
-item.conteudo
-?
-`<p>${item.conteudo}</p>`
-:
-""
-}
+
+
+<p>
+
+${item.conteudo || ""}
+
+</p>
+
+
 
 ${
+
 item.referencia
+
 ?
-`<span>${item.referencia}</span>`
+
+`
+
+<span>
+
+${item.referencia}
+
+</span>
+
+`
+
 :
+
 ""
+
 }
+
+
+
 
 <br><br>
 
+
+
+
+
+${
+
+item.link
+
+?
+
+`
+
+<a
+
+href="${item.link}"
+
+class="btn primary">
+
+📖 Abrir Bíblia
+
+</a>
+
+`
+
+:
+
+""
+
+}
+
+
+
+
+
+
 <button
+
 class="btn secondary"
+
 onclick="removerFavorito('${item.id || ""}','${item.titulo || ""}')">
+
 
 🗑 Remover
 
+
 </button>
+
+
 
 </div>
 
+
+
 `;
 
+
+
 });
+
+
+
 }
+
+
+
+
+
+
+
+/*=====================================================
+REMOVER
+======================================================*/
+
 
 function removerFavorito(id,titulo){
 
-let favoritos =
-carregarFavoritos();
 
-favoritos =
-favoritos.filter(item => {
 
-if(id && item.id){
+let favoritosGerais = JSON.parse(
 
-return item.id !== id;
+localStorage.getItem(
+"favoritos"
+)
 
-}
+) || [];
 
-return item.titulo !== titulo;
+
+
+let favoritosBiblia = JSON.parse(
+
+localStorage.getItem(
+"mhd_favorites"
+)
+
+) || [];
+
+
+
+
+
+
+favoritosGerais = favoritosGerais.filter(item=>{
+
+
+return item.id !== id
+
+&&
+
+item.titulo !== titulo;
+
 
 });
+
+
+
+
+
+
+favoritosBiblia = favoritosBiblia.filter(item=>{
+
+
+return (
+
+item.book + "." + item.chapter
+
+)
+
+!== id;
+
+
+});
+
+
+
+
+
 
 localStorage.setItem(
 
 "favoritos",
 
 JSON.stringify(
-favoritos
+favoritosGerais
 )
 
 );
 
-mostrarFavoritos();
 
-}
 
-function removerFavoritoAntigo(texto){
 
-let favoritos =
-carregarFavoritos();
-
-favoritos =
-favoritos.filter(
-f => f !== texto
-);
 
 localStorage.setItem(
-"favoritos",
-JSON.stringify(favoritos)
+
+"mhd_favorites",
+
+JSON.stringify(
+favoritosBiblia
+)
+
 );
 
+
+
+
+
 mostrarFavoritos();
+
 
 }
 
+
+
+
+
+
 pesquisa.addEventListener(
+
 "input",
+
 mostrarFavoritos
+
 );
+
+
+
+
 
 filtro.addEventListener(
+
 "change",
+
 mostrarFavoritos
+
 );
 
+
+
+
+
+
 mostrarFavoritos();
+
+
 
 </script>
 
+
+
 </body>
+
 
 </html>

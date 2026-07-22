@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Leia, pesquise, estude e ouça a Palavra de Deus gratuitamente através da Bíblia MHD.">
+
+    <meta name="keywords"
+        content="Bíblia, Bíblia Online, Palavra de Deus, Bíblia MHD, MHD, Versículos, Estudo Bíblico">
+
+    <meta name="author"
+        content="MHD - Minha História Será Diferente">
+
+    <title>Bíblia MHD | Minha História Será Diferente</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="biblia.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ======================================================
+HEADER
+======================================================= -->
+
+<header class="simple-header">
+
+    <div class="container simple-navbar">
+
+        <a href="../index.html" class="back-home-btn">
+
+            <i class="fas fa-arrow-left"></i>
+
+            <span>Voltar ao Início</span>
+
+        </a>
+
+    </div>
+
+</header>
+
+<!-- ======================================================
+HERO
+======================================================= -->
+
+<section class="biblia-hero">
+
+    <div class="container">
+
+        <span class="section-tag">
+
+            Bíblia MHD
+
+        </span>
+
+        <h1>
+
+            Leia, pesquise, estude e ouça a Palavra de Deus
+
+        </h1>
+
+        <p>
+
+            Explore os 66 livros da Bíblia, leia capítulos,
+            pesquise versículos, ouça a Palavra de Deus e fortaleça
+            diariamente a sua caminhada com Deus.
+
+        </p>
+
+        <!-- Pesquisa -->
+
+        <form
+            id="searchForm"
+            class="search-box"
+            autocomplete="off">
+
+            <input
+    type="search"
+    id="searchInput"
+                placeholder="Pesquisar livro, capítulo ou versículo..."
+                maxlength="100"
+                spellcheck="false"
+                autocomplete="off">
+
+            <button
+                id="btnPesquisar"
+                type="submit">
+
+                <i class="fas fa-search"></i>
+
+                Pesquisar
+
+            </button>
+
+        </form>
+
+        <!-- Tradução -->
+
+        <div class="bible-version">
+
+            <label for="bibleSelector">
+
+                Tradução
+
+            </label>
+
+<select id="bibleSelector">
+
+<option value="41a6caa722a21d88-01">
+
+Bíblia Sagrada - Nova Versão Transformadora (NVT)
+
+</option>
+
+
+<option value="de4e12af7f28f599-01">
+
+King James Version
+
+</option>
+
+
+<option value="179568874c45066f-01">
+
+Douay-Rheims
+
+</option>
+
+
+</select>
+
+</section>
+
+<!-- ======================================================
+LOADER
+======================================================= -->
+
+<div
+    id="loader"
+    class="loader"
+    style="display:none;">
+
+    <i class="fas fa-spinner fa-spin"></i>
+
+    <span>
+
+        A carregar a Bíblia...
+
+    </span>
+
+</div>
+
+<!-- ======================================================
+MENSAGEM DE ERRO
+======================================================= -->
+
+<div
+    id="errorMessage"
+    class="api-error"
+    style="display:none;">
+
+</div>
+
+<!-- ======================================================
+BEM-VINDO
+======================================================= -->
+
+<section class="intro-biblia">
+
+    <div class="container">
+
+        <div class="intro-card">
+
+            <div class="intro-header">
+
+                <span class="section-tag">
+
+                    Palavra de Deus
+
+                </span>
+
+                <h2>
+
+                    Bem-vindo à Bíblia MHD
+
+                </h2>
+
+            </div>
+
+            <p>
+
+                A Bíblia é a Palavra inspirada por Deus e o fundamento da fé cristã.
+                Nesta página poderá navegar pelos 66 livros das Escrituras,
+                pesquisar capítulos e versículos, ouvir a Palavra de Deus
+                e crescer diariamente no conhecimento das Sagradas Escrituras.
+
+            </p>
+
+            <p>
+
+                O objetivo da Bíblia MHD é disponibilizar gratuitamente
+                as Escrituras de forma simples, organizada e acessível,
+                incentivando uma leitura diária que fortaleça a fé,
+                a esperança e o relacionamento com Deus.
+
+            </p>
+
+            <!-- ======================================================
+            ACESSO RÁPIDO
+            ======================================================= -->
+
+            <div class="quick-access">
+
+                <div class="quick-card">
+
+                    <div class="quick-icon">
+
+                        <i class="fas fa-book-open"></i>
+
+                    </div>
+
+                    <h3>
+
+                        Versículo do Dia
+
+                    </h3>
+
+                    <p>
+
+                        Receba diariamente uma passagem bíblica
+                        para fortalecer a sua fé.
+
+                    </p>
+
+                </div>
+
+                <div class="quick-card">
+
+                    <div class="quick-icon">
+
+                        <i class="fas fa-calendar-days"></i>
+
+                    </div>
+
+                    <h3>
+
+                        Plano de Leitura
+
+                    </h3>
+
+                    <p>
+
+                        Leia toda a Bíblia seguindo um plano
+                        organizado e progressivo.
+
+                    </p>
+
+                </div>
+
+                <div class="quick-card">
+
+                    <div class="quick-icon">
+
+                        <i class="fas fa-headphones"></i>
+
+                    </div>
+
+                    <h3>
+
+                        Ouvir a Bíblia
+
+                    </h3>
+
+                    <p>
+
+                        Escute a Palavra de Deus em qualquer lugar
+                        através da Bíblia em áudio.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==================================================
+ANTIGO TESTAMENTO
+================================================== -->
+
+<article class="testament-card">
+
+    <div class="testament-title">
+
+        <div class="title-icon">
+
+            <i class="fas fa-scroll"></i>
+
+        </div>
+
+        <div>
+
+            <h2>Antigo Testamento</h2>
+
+            <small>39 Livros</small>
+
+        </div>
+
+    </div>
+
+    <!-- Pentateuco -->
+
+    <div class="category-card">
+
+        <h3>
+
+            <i class="fas fa-book"></i>
+
+            Pentateuco
+
+        </h3>
+
+        <div class="books-grid">
+
+            <a href="#" class="book-link" data-book-id="GEN">Génesis</a>
+            <a href="#" class="book-link" data-book-id="EXO">Êxodo</a>
+            <a href="#" class="book-link" data-book-id="LEV">Levítico</a>
+            <a href="#" class="book-link" data-book-id="NUM">Números</a>
+            <a href="#" class="book-link" data-book-id="DEU">Deuteronómio</a>
+
+        </div>
+
+    </div>
+
+    <!-- Livros Históricos -->
+
+    <div class="category-card">
+
+        <h3>
+
+            <i class="fas fa-landmark"></i>
+
+            Livros Históricos
+
+        </h3>
+
+        <div class="books-grid">
+
+            <a href="#" class="book-link" data-book-id="JOS">Josué</a>
+            <a href="#" class="book-link" data-book-id="JDG">Juízes</a>
+            <a href="#" class="book-link" data-book-id="RUT">Rute</a>
+
+            <a href="#" class="book-link" data-book-id="1SA">1 Samuel</a>
+            <a href="#" class="book-link" data-book-id="2SA">2 Samuel</a>
+
+            <a href="#" class="book-link" data-book-id="1KI">1 Reis</a>
+            <a href="#" class="book-link" data-book-id="2KI">2 Reis</a>
+
+            <a href="#" class="book-link" data-book-id="1CH">1 Crónicas</a>
+            <a href="#" class="book-link" data-book-id="2CH">2 Crónicas</a>
+
+            <a href="#" class="book-link" data-book-id="EZR">Esdras</a>
+            <a href="#" class="book-link" data-book-id="NEH">Neemias</a>
+            <a href="#" class="book-link" data-book-id="EST">Ester</a>
+
+        </div>
+
+    </div>
+
+    <!-- Livros Poéticos -->
+
+    <div class="category-card">
+
+        <h3>
+
+            <i class="fas fa-feather-alt"></i>
+
+            Livros Poéticos e Sapienciais
+
+        </h3>
+
+        <div class="books-grid">
+
+            <a href="#" class="book-link" data-book-id="JOB">Job</a>
+
+            <a href="#" class="book-link" data-book-id="PSA">Salmos</a>
+
+            <a href="#" class="book-link" data-book-id="PRO">Provérbios</a>
+
+            <a href="#" class="book-link" data-book-id="ECC">Eclesiastes</a>
+
+            <a href="#" class="book-link" data-book-id="SNG">Cântico dos Cânticos</a>
+
+        </div>
+
+    </div>
+
+    <!-- Profetas Maiores -->
+
+    <div class="category-card">
+
+        <h3>
+
+            <i class="fas fa-bullhorn"></i>
+
+            Profetas Maiores
+
+        </h3>
+
+        <div class="books-grid">
+
+            <a href="#" class="book-link" data-book-id="ISA">Isaías</a>
+
+            <a href="#" class="book-link" data-book-id="JER">Jeremias</a>
+
+            <a href="#" class="book-link" data-book-id="LAM">Lamentações</a>
+
+            <a href="#" class="book-link" data-book-id="EZK">Ezequiel</a>
+
+            <a href="#" class="book-link" data-book-id="DAN">Daniel</a>
+
+        </div>
+
+    </div>
+
+    <!-- Profetas Menores -->
+
+    <div class="category-card">
+
+        <h3>
+
+            <i class="fas fa-seedling"></i>
+
+            Profetas Menores
+
+        </h3>
+
+        <div class="books-grid">
+
+            <a href="#" class="book-link" data-book-id="HOS">Oseias</a>
+            <a href="#" class="book-link" data-book-id="JOL">Joel</a>
+            <a href="#" class="book-link" data-book-id="AMO">Amós</a>
+
+            <a href="#" class="book-link" data-book-id="OBA">Obadias</a>
+            <a href="#" class="book-link" data-book-id="JON">Jonas</a>
+            <a href="#" class="book-link" data-book-id="MIC">Miqueias</a>
+
+            <a href="#" class="book-link" data-book-id="NAM">Naum</a>
+            <a href="#" class="book-link" data-book-id="HAB">Habacuque</a>
+            <a href="#" class="book-link" data-book-id="ZEP">Sofonias</a>
+
+            <a href="#" class="book-link" data-book-id="HAG">Ageu</a>
+            <a href="#" class="book-link" data-book-id="ZEC">Zacarias</a>
+            <a href="#" class="book-link" data-book-id="MAL">Malaquias</a>
+
+        </div>
+
+    </div>
+
+</article>
+
+<!-- ==================================================
+NOVO TESTAMENTO
+================================================== -->
+
+<article class="testament-card">
+
+    <div class="testament-title">
+
+        <div class="title-icon">
+
+            <i class="fas fa-cross"></i>
+
+        </div>
+
+        <div>
+
+            <h2>Novo Testamento</h2>
+
+            <small>27 Livros</small>
+
+        </div>
+
+    </div>
+
+    <!-- Evangelhos -->
+
+    <div class="category-card">
+
+        <h3>
+
+            <i class="fas fa-book-open"></i>
+
+            Evangelhos
+
+        </h3>
+
+        <div class="books-grid">
+
+            <a href="#" class="book-link" data-book-id="MAT">Mateus</a>
+
+            <a href="#" class="book-link" data-book-id="MRK">Marcos</a>
+
+            <a href="#" class="book-link" data-book-id="LUK">Lucas</a>
+
+            <a href="#" class="book-link" data-book-id="JHN">João</a>
+
+        </div>
+
+    </div>
+
+    <!-- Atos -->
+
+    <div class="category-card">
+
+        <h3>
+
+            <i class="fas fa-users"></i>
+
+            Atos dos Apóstolos
+
+        </h3>
+
+        <div class="books-grid">
+
+            <a href="#" class="book-link" data-book-id="ACT">Atos</a>
+
+        </div>
+
+    </div>
+
+    <!-- Cartas Paulinas -->
+
+    <div class="category-card">
+
+        <h3>
+
+            <i class="fas fa-envelope-open-text"></i>
+
+            Cartas Paulinas
+
+        </h3>
+
+        <div class="books-grid">
+
+            <a href="#" class="book-link" data-book-id="ROM">Romanos</a>
+
+            <a href="#" class="book-link" data-book-id="1CO">1 Coríntios</a>
+
+            <a href="#" class="book-link" data-book-id="2CO">2 Coríntios</a>
+
+            <a href="#" class="book-link" data-book-id="GAL">Gálatas</a>
+
+            <a href="#" class="book-link" data-book-id="EPH">Efésios</a>
+
+            <a href="#" class="book-link" data-book-id="PHP">Filipenses</a>
+
+            <a href="#" class="book-link" data-book-id="COL">Colossenses</a>
+
+            <a href="#" class="book-link" data-book-id="1TH">1 Tessalonicenses</a>
+
+            <a href="#" class="book-link" data-book-id="2TH">2 Tessalonicenses</a>
+
+            <a href="#" class="book-link" data-book-id="1TI">1 Timóteo</a>
+
+            <a href="#" class="book-link" data-book-id="2TI">2 Timóteo</a>
+
+            <a href="#" class="book-link" data-book-id="TIT">Tito</a>
+
+            <a href="#" class="book-link" data-book-id="PHM">Filemom</a>
+
+        </div>
+
+    </div>
+
+    <!-- Cartas Gerais -->
+
+    <div class="category-card">
+
+        <h3>
+
+            <i class="fas fa-envelope"></i>
+
+            Cartas Gerais
+
+        </h3>
+
+        <div class="books-grid">
+
+            <a href="#" class="book-link" data-book-id="HEB">Hebreus</a>
+
+            <a href="#" class="book-link" data-book-id="JAS">Tiago</a>
+
+            <a href="#" class="book-link" data-book-id="1PE">1 Pedro</a>
+
+            <a href="#" class="book-link" data-book-id="2PE">2 Pedro</a>
+
+            <a href="#" class="book-link" data-book-id="1JN">1 João</a>
+
+            <a href="#" class="book-link" data-book-id="2JN">2 João</a>
+
+            <a href="#" class="book-link" data-book-id="3JN">3 João</a>
+
+            <a href="#" class="book-link" data-book-id="JUD">Judas</a>
+
+        </div>
+
+    </div>
+
+    <!-- Apocalipse -->
+
+    <div class="category-card">
+
+        <h3>
+
+            <i class="fas fa-crown"></i>
+
+            Apocalipse
+
+        </h3>
+
+        <div class="books-grid">
+
+            <a href="#" class="book-link" data-book-id="REV">Apocalipse</a>
+
+        </div>
+
+    </div>
+
+</article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==================================================
+RESULTADO DA PESQUISA
+================================================== -->
+
+<section
+    id="resultadoPesquisa"
+    class="search-results"
+    style="display: none;">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span class="section-tag">
+
+                Pesquisa
+
+            </span>
+
+            <h2>
+
+                Resultado da Pesquisa
+
+            </h2>
+
+            <p>
+
+                Os resultados encontrados serão apresentados abaixo.
+
+            </p>
+
+        </div>
+
+        <div id="resultadoConteudo">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==================================================
+VERSÍCULO FINAL
+================================================== -->
+
+<section class="biblia-footer-verse">
+
+    <div class="container">
+
+        <blockquote>
+
+            "Lâmpada para os meus pés é a tua Palavra
+            e luz para o meu caminho."
+
+        </blockquote>
+
+        <span>
+
+            Salmos 119:105
+
+        </span>
+
+    </div>
+
+</section>
+
+<!-- ==================================================
+FOOTER
+================================================== -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-cta">
+
+            <h2>
+
+                Ajude-nos a continuar esta missão
+
+            </h2>
+
+            <p>
+
+                O MHD dedica-se à produção de livros,
+                recursos gratuitos e conteúdos inspiradores
+                que fortalecem a fé, promovem o crescimento
+                espiritual e transformam vidas.
+
+                Se esta missão tem sido uma bênção para si,
+                considere apoiar este projeto.
+
+            </p>
+
+            <a
+                href="../apoiar.html"
+                class="footer-btn">
+
+                <i class="fas fa-heart"></i>
+
+                Apoiar esta Missão
+
+            </a>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+
+                © 2026 MHD – Minha História Será Diferente.
+
+            </p>
+
+            <p>
+
+                Todos os direitos reservados.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- ==================================================
+SCRIPTS
+================================================== -->
+
+<script src="config.js"></script>
+
+<script src="api.js"></script>
+
+<script src="script.js"></script>
+
+<script src="biblia.js"></script>
+
+</body>
+
+</html>
